@@ -1,11 +1,11 @@
-# Trust Level Avatar Flair - Mecha Shield v3
+# Trust Level Avatar Flair - Mecha Shield v4
 
 This version replaces the CSS-only soft shield with a fully inline SVG badge:
 
-- angular layered armor
+- wide-shoulder angular armor
 - dark gasket and quality-color inner plate
 - metal bevels and rivets
-- monochrome SVG symbols for all five trust levels
+- redrawn monochrome SVG symbols, including proper crossed swords
 - smaller topic-avatar badge (17 x 19px)
 - keeps image URL, Font Awesome, position and exclusion compatibility
 

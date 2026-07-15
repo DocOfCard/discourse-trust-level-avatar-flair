@@ -108,40 +108,40 @@ export default class TrustLevelAvatarFlair extends Component {
                 <g class="tl-mecha-badge__body">
                   <path
                     class="tl-mecha-badge__outer"
-                    d="M32 2 58 10 61 43 52 59 32 70 12 59 3 43 6 10Z"
+                    d="M32 2 60 11 59 42 52 59 32 71 12 59 5 42 4 11Z"
                   />
                   <path
                     class="tl-mecha-badge__gasket"
-                    d="M32 8 52 14 55 41 47 54 32 63 17 54 9 41 12 14Z"
+                    d="M32 8 53 15 52 39 46 53 32 62 18 53 12 39 11 15Z"
                   />
                   <path
                     class="tl-mecha-badge__panel"
-                    d="M32 11 49 16 52 39 44 50 32 58 20 50 12 39 15 16Z"
+                    d="M32 12 49 18 48 37 43 48 32 56 21 48 16 37 15 18Z"
                   />
                   <path
                     class="tl-mecha-badge__facet tl-mecha-badge__facet--light"
-                    d="M15 16 32 11 24 31 12 39Z"
+                    d="M15 18 32 12 25 30 16 37Z"
                   />
                   <path
                     class="tl-mecha-badge__facet tl-mecha-badge__facet--dark"
-                    d="M49 16 32 11 40 31 52 39Z"
+                    d="M49 18 32 12 39 30 48 37Z"
                   />
                   <path
                     class="tl-mecha-badge__facet tl-mecha-badge__facet--lower-dark"
-                    d="M12 39 24 31 32 58 20 50Z"
+                    d="M16 37 25 30 32 56 21 48Z"
                   />
                   <path
                     class="tl-mecha-badge__facet tl-mecha-badge__facet--lower-light"
-                    d="M52 39 40 31 32 58 44 50Z"
+                    d="M48 37 39 30 32 56 43 48Z"
                   />
                   <path
                     class="tl-mecha-badge__ridge"
-                    d="M11 12 32 5 53 12 49 17 32 12 15 17Z"
+                    d="M8 12 32 5 56 12 50 18 32 12 14 18Z"
                   />
-                  <circle class="tl-mecha-badge__rivet" cx="11" cy="18" r="1.7" />
-                  <circle class="tl-mecha-badge__rivet" cx="53" cy="18" r="1.7" />
-                  <circle class="tl-mecha-badge__rivet" cx="16" cy="50" r="1.5" />
-                  <circle class="tl-mecha-badge__rivet" cx="48" cy="50" r="1.5" />
+                  <circle class="tl-mecha-badge__rivet" cx="10" cy="18" r="1.7" />
+                  <circle class="tl-mecha-badge__rivet" cx="54" cy="18" r="1.7" />
+                  <circle class="tl-mecha-badge__rivet" cx="15" cy="51" r="1.5" />
+                  <circle class="tl-mecha-badge__rivet" cx="49" cy="51" r="1.5" />
 
                   <g class="tl-badge-icon">
                     {{#if this.isTl0}}
@@ -150,13 +150,16 @@ export default class TrustLevelAvatarFlair extends Component {
                       <path d="M33 30c2-7 7-10 14-9 0 7-5 12-14 12" />
                       <path d="M24 49h16" />
                     {{else if this.isTl1}}
-                      <path d="M20 20 44 48" />
-                      <path class="tl-badge-icon__fill" d="m18 18 9 3-6 6Z" />
-                      <path d="m39 44 7 7" />
-                      <path d="M44 20 20 48" />
-                      <path class="tl-badge-icon__fill" d="m46 18-9 3 6 6Z" />
-                      <path d="m25 44-7 7" />
-                      <path d="M35 43h10M19 43h10" />
+                      <path class="tl-badge-icon__fill" d="M19 18 24 20 43 43 39 47 20 24Z" />
+                      <path class="tl-badge-icon__soft-fill" d="M21 20 24 21 41 42 39 44 22 23Z" />
+                      <path d="M37 43 43 49" />
+                      <path d="M35 46 40 41" />
+                      <path d="M42 49 46 53" />
+                      <path class="tl-badge-icon__fill" d="M45 18 40 20 21 43 25 47 44 24Z" />
+                      <path class="tl-badge-icon__soft-fill" d="M43 20 40 21 23 42 25 44 42 23Z" />
+                      <path d="M27 43 21 49" />
+                      <path d="M29 46 24 41" />
+                      <path d="M22 49 18 53" />
                     {{else if this.isTl2}}
                       <path d="m24 19 8 11 8-11" />
                       <circle cx="32" cy="40" r="11" />
