@@ -1,3 +1,3 @@
-# Trust Level Avatar Flair - User SVG Set
+# Trust Level Avatar Flair - Split SVG Fixed
 
-Uses the five badges cropped from the supplied `1.svg`. The source white background was removed. TL2 was recolored from green to blue while preserving the original geometry and metallic details.
+Each SVG now physically contains only one badge. This is not a viewBox-only crop. TL2 is blue and the outer CSS drop-shadow is removed.
