@@ -4,6 +4,6 @@ import TrustLevelAvatarFlair from "../../components/trust-level-avatar-flair";
 
 @tagName("div")
 @classNames("user-profile-avt")
-export default class UserProfileAvatarTrustFlair extends Component {
+export default class TrustLevelFlairConnector extends Component {
   <template><TrustLevelAvatarFlair @model={{@outletArgs.model}} /></template>
 }

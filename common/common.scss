@@ -1,94 +1,36 @@
-@if ($use_font_awesome == "false") {
-  @if (str-index($new_user_flair_icon, "http")) { .tl-0 { background-image: url($new_user_flair_icon); } }
-  @if (str-index($basic_user_flair_icon, "http")) { .tl-1 { background-image: url($basic_user_flair_icon); } }
-  @if (str-index($member_flair_icon, "http")) { .tl-2 { background-image: url($member_flair_icon); } }
-  @if (str-index($regular_flair_icon, "http")) { .tl-3 { background-image: url($regular_flair_icon); } }
-  @if (str-index($leader_flair_icon, "http")) { .tl-4 { background-image: url($leader_flair_icon); } }
-}
 
 .tl-flair {
-  --tl-accent: #73777d;
-  --tl-accent-light: #aeb3b8;
-  --tl-accent-dark: #34383e;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-repeat: no-repeat;
-  background-position: center;
   box-sizing: border-box;
   z-index: 1;
-}
-
-.tl-0 { --tl-accent: #686d72; --tl-accent-light: #aeb4b9; --tl-accent-dark: #30343a; }
-.tl-1 { --tl-accent: #247d35; --tl-accent-light: #4dbb62; --tl-accent-dark: #123f20; }
-.tl-2 { --tl-accent: #2469ae; --tl-accent-light: #4f9eea; --tl-accent-dark: #123b69; }
-.tl-3 { --tl-accent: #7435aa; --tl-accent-light: #aa63df; --tl-accent-dark: #3d195f; }
-.tl-4 { --tl-accent: #b65b0c; --tl-accent-light: #ed9234; --tl-accent-dark: #632d05; }
-
-.tl-flair--mecha-shield {
   background: transparent !important;
-  background-image: none !important;
-  overflow: visible;
 }
 
-.tl-mecha-badge {
+.tl-custom-svg-badge {
   display: block;
   width: 100%;
   height: 100%;
-  overflow: visible;
-}
-
-.tl-badge-icon {
-  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 85%));
-}
-
-.tl-flair-symbol {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  line-height: 1;
-  text-shadow: 0 1px 1px rgb(0 0 0 / 82%);
-}
-
-.tl-flair-emoji {
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-}
-
-.tl-flair--bare-emoji {
-  background: transparent !important;
-  background-image: none !important;
-  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 50%));
-}
-
-.tl-flair--image {
-  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: contain;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 55%));
 }
+.tl-0 .tl-custom-svg-badge { background-image: url($badge_tl0); }
+.tl-1 .tl-custom-svg-badge { background-image: url($badge_tl1); }
+.tl-2 .tl-custom-svg-badge { background-image: url($badge_tl2); }
+.tl-3 .tl-custom-svg-badge { background-image: url($badge_tl3); }
+.tl-4 .tl-custom-svg-badge { background-image: url($badge_tl4); }
 
-/* User card / profile: prominent but not oversized. */
+.tl-flair-symbol { display:flex; align-items:center; justify-content:center; line-height:1; color:#fff; }
+.tl-flair-emoji { font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif; }
+
 .user-card-avt .tl-flair,
-.user-profile-avt .tl-flair {
-  width: 34px;
-  height: 38px;
-  font-size: 18px;
-  .d-icon { width: 17px; height: 17px; }
-}
-
-/* Topic post avatar: deliberately smaller and quieter. */
+.user-profile-avt .tl-flair { width: 38px; height: 38px; font-size: 18px; }
 .topic-avatar .tl-flair,
-.collapsed-info .user-profile-avt .tl-flair {
-  width: 17px;
-  height: 19px;
-  font-size: 10px;
-  .d-icon { width: 9px; height: 9px; }
-}
-
-.user-card-avt .tl-flair--image,
-.user-profile-avt .tl-flair--image { width: 32px; height: 32px; }
-.topic-avatar .tl-flair--image,
-.collapsed-info .user-profile-avt .tl-flair--image { width: 17px; height: 17px; }
+.collapsed-info .user-profile-avt .tl-flair { width: 17px; height: 17px; font-size: 10px; }
 
 @if $trust_level_flair_position == "overlap" {
   .user-card-avt .tl-flair { bottom: -1px; right: 13px; }
@@ -96,7 +38,6 @@
   .user-profile-avt .tl-flair { bottom: 9px; right: 34px; }
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; right: 13px; }
   @if $group_flair_always_on_top == "true" { .avatar-flair { z-index: 2; } }
-  @else { .avatar-flair { z-index: initial; } }
 } @else if $trust_level_flair_position == "top-right" {
   .user-card-avt .tl-flair { top: -1px; right: -2px; }
   .topic-avatar .tl-flair { top: 0; right: -2px; }
@@ -107,171 +48,15 @@
   .topic-avatar .tl-flair { top: 0; left: -1px; }
   .user-profile-avt .tl-flair { top: -1px; left: -2px; }
   .collapsed-info .user-profile-avt .tl-flair { top: -4px; left: -5px; }
-  .embedded-posts .tl-flair { left: 19px; }
 } @else if $trust_level_flair_position == "bottom-right" {
   .user-card-avt .tl-flair { bottom: -4px; right: -7px; }
   .topic-avatar .tl-flair { bottom: -1px; right: -2px; }
   .user-profile-avt .tl-flair { bottom: 9px; right: 18px; }
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; right: 4px; }
-  @if $group_flair_always_on_top == "true" {
-    .topic-avatar, .user-card-avatar, .user-profile-avatar {
-      .avatar-flair ~ .tl-avatar-flair, div + div .tl-avatar-flair { display: none; }
-    }
-    .avatar-flair { display: flex; }
-  } @else { .avatar-flair { display: none !important; } }
-} @else if $trust_level_flair_position == "bottom-left" {
+} @else {
   .user-card-avt .tl-flair { bottom: -4px; left: -7px; }
   .topic-avatar .tl-flair { bottom: -1px; left: -2px; }
   .user-profile-avt .tl-flair { bottom: 9px; left: -2px; }
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; left: -5px; }
-  .embedded-posts .tl-flair { left: 19px; }
 }
-
 .user-main .collapsed-info.about { overflow: initial; }
-.user-main .about .details { padding: 15px 15px 4px; }
-.user-main .about.collapsed-info .details { padding: 12px 15px 2px; }
-
-.mobile-view {
-  @if $trust_level_flair_position == "overlap" {
-    .user-profile-avt .tl-flair { right: 27px; }
-    .collapsed-info .user-profile-avt .tl-flair { right: 13px; }
-  } @else if $trust_level_flair_position == "top-right" {
-    .user-profile-avt .tl-flair { right: 4px; }
-  } @else if $trust_level_flair_position == "top-left" {
-    .topic-avatar .tl-flair { left: -1px; }
-    .user-profile-avt .tl-flair { left: 4px; }
-  } @else if $trust_level_flair_position == "bottom-right" {
-    .user-profile-avt .tl-flair { right: 4px; }
-  } @else {
-    .topic-avatar .tl-flair { left: -2px; }
-    .user-profile-avt .tl-flair { left: 4px; }
-  }
-}
-
-/* SVG shield rendering. No dynamic SVG ids or template helpers are required. */
-.tl-mecha-badge__body {
-  filter: drop-shadow(0 2px 1.5px rgb(0 0 0 / 72%));
-}
-
-.tl-mecha-badge__outer {
-  fill: #737980;
-  stroke: #15191e;
-  stroke-width: 2;
-}
-
-.tl-mecha-badge__gasket {
-  fill: #10151a;
-  stroke: #05080a;
-  stroke-width: 1.5;
-}
-
-.tl-mecha-badge__panel {
-  fill: var(--tl-accent);
-  stroke: rgb(255 255 255 / 42%);
-  stroke-width: 1.2;
-}
-
-.tl-mecha-badge__facet--light {
-  fill: rgb(255 255 255 / 18%);
-}
-
-.tl-mecha-badge__facet--dark {
-  fill: rgb(0 0 0 / 24%);
-}
-
-.tl-mecha-badge__facet--lower-dark {
-  fill: rgb(0 0 0 / 20%);
-}
-
-.tl-mecha-badge__facet--lower-light {
-  fill: rgb(255 255 255 / 8%);
-}
-
-.tl-mecha-badge__ridge {
-  fill: rgb(255 255 255 / 30%);
-}
-
-.tl-mecha-badge__rivet {
-  fill: #c7ccd0;
-  stroke: #2b3137;
-  stroke-width: 0.8;
-}
-
-.tl-badge-icon {
-  fill: none;
-  stroke: #f7f8f8;
-  stroke-width: 4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 85%));
-}
-
-.tl-badge-icon__fill {
-  fill: #f7f8f8;
-  stroke: none;
-}
-
-.tl-badge-icon__soft-fill {
-  fill: rgb(255 255 255 / 15%);
-}
-
-
-/* Detailed v6 internal crossed-sword symbol. */
-.tl-sword-blade {
-  fill: #e9eeee;
-  stroke: #fcffff;
-  stroke-width: 1.1;
-  stroke-linejoin: miter;
-}
-.tl-sword-ridge {
-  fill: none;
-  stroke: #aeb8b8;
-  stroke-width: 0.9;
-  stroke-linecap: square;
-}
-.tl-sword-guard {
-  fill: none;
-  stroke: #f6d883;
-  stroke-width: 2.5;
-  stroke-linecap: square;
-}
-.tl-sword-grip {
-  fill: none;
-  stroke: #8d5b2c;
-  stroke-width: 3;
-  stroke-linecap: butt;
-}
-.tl-sword-pommel {
-  fill: #d8b963;
-  stroke: #6e491f;
-  stroke-width: 0.9;
-}
-
-/* Unified progression icon set: sprout -> sword -> crossed swords -> battle flag -> crown. */
-.tl-single-sword .tl-sword-blade {
-  fill: #eef2f2;
-  stroke: #ffffff;
-  stroke-width: 1.1;
-}
-
-.tl-battle-flag .tl-flag-pole,
-.tl-battle-flag .tl-flag-pommel,
-.tl-battle-flag .tl-flag-base {
-  fill: none;
-  stroke: #f1d488;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.tl-battle-flag .tl-flag-cloth {
-  fill: #f7f8f8;
-  stroke: #ffffff;
-  stroke-width: 1.4;
-  stroke-linejoin: round;
-}
-
-.tl-battle-flag .tl-flag-fold {
-  fill: rgb(0 0 0 / 22%);
-  stroke: none;
-}

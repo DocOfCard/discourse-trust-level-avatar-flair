@@ -1,11 +1,18 @@
 {
-  "name": "Trust Level Avatar Flair - Mecha Progression",
+  "name": "Trust Level Avatar Flair - User SVG Set",
   "component": true,
-  "authors": "OpenAI; derived from Trust Level Avatar Flair by tshenry",
-  "theme_version": "3.1.8",
+  "authors": "OpenAI; based on Trust Level Avatar Flair by tshenry; badge artwork supplied by site owner",
+  "theme_version": "4.0.0",
   "minimum_discourse_version": "3.3.0.beta1",
   "about_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair",
   "license_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair/blob/main/LICENSE",
-  "description": "Trust-level avatar flair using the v3.1 mecha shield with a unified progression icon set and an inline TL0-TL4 preview in the admin settings.",
-  "version": "3.1.3"
+  "description": "Trust-level avatar flair using five separately cropped transparent SVG badges supplied by the site owner. TL2 uses a blue panel to distinguish it from TL1.",
+  "version": "4.0.0",
+  "assets": {
+    "badge_tl0": "assets/badge-tl0.svg",
+    "badge_tl1": "assets/badge-tl1.svg",
+    "badge_tl2": "assets/badge-tl2.svg",
+    "badge_tl3": "assets/badge-tl3.svg",
+    "badge_tl4": "assets/badge-tl4.svg"
+  }
 }
