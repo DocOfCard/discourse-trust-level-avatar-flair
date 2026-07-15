@@ -11,14 +11,11 @@ export default class TrustLevelAvatarFlair extends Component {
   }
 
   get excludableNonhuman() {
-    if (settings.exclude_nonhuman_users && this.user.id < 0) {
-      return true;
-    }
-    return false;
+    return settings.exclude_nonhuman_users && this.user?.id < 0;
   }
 
-  get trustLevelIcon() {
-    const trustIcons = [
+  get configuredFlair() {
+    const values = [
       settings.new_user_flair_icon,
       settings.basic_user_flair_icon,
       settings.member_flair_icon,
@@ -26,32 +23,54 @@ export default class TrustLevelAvatarFlair extends Component {
       settings.leader_flair_icon,
     ];
 
-    const trustIcon = trustIcons[this.user.trust_level];
+    return values[this.user?.trust_level]?.trim?.() || "";
+  }
 
-    if (trustIcon?.includes("fa-")) {
-      return convertIconClass(trustIcon);
+  get trustLevelIcon() {
+    const value = this.configuredFlair;
+
+    if (settings.use_font_awesome && value.includes("fa-")) {
+      return convertIconClass(value);
     }
 
-    return;
+    return null;
+  }
+
+  get trustLevelEmoji() {
+    const value = this.configuredFlair;
+
+    if (
+      !value ||
+      settings.use_font_awesome ||
+      /^https?:\/\//i.test(value) ||
+      value.includes("fa-")
+    ) {
+      return null;
+    }
+
+    return value;
   }
 
   get trustLevelName() {
-    return this.site.trustLevels[this.user.trust_level]?.name;
+    return this.site.trustLevels[this.user?.trust_level]?.name;
   }
 
   <template>
     {{#unless this.excludableNonhuman}}
-      <div class="tl-avatar-flair">
-        <div
-          title="{{this.trustLevelName}}"
-          class="tl-{{this.user.trust_level}}
-            tl-flair tl-flair-{{this.user.username}}"
-        >
-          {{#if this.trustLevelIcon}}
-            {{icon this.trustLevelIcon}}
-          {{/if}}
+      {{#if this.configuredFlair}}
+        <div class="tl-avatar-flair">
+          <div
+            title={{this.trustLevelName}}
+            class="tl-{{this.user.trust_level}} tl-flair tl-flair-{{this.user.username}}"
+          >
+            {{#if this.trustLevelIcon}}
+              {{icon this.trustLevelIcon}}
+            {{else if this.trustLevelEmoji}}
+              <span class="tl-flair-emoji" aria-hidden="true">{{this.trustLevelEmoji}}</span>
+            {{/if}}
+          </div>
         </div>
-      </div>
+      {{/if}}
     {{/unless}}
   </template>
 }

@@ -6,46 +6,51 @@ trust_level_flair_position:
     - "top-right"
     - "top-left"
     - "overlap"
+
 group_flair_always_on_top:
   default: true
   type: bool
   description: "For positions where the trust flair overlaps, or is in the same position as group flair."
+
 use_font_awesome:
   default: false
   type: bool
-  description: '<span>Use font awesome in the flair icon fields below. Accepted
-    formats: "fa-icon", "far fa-icon" or "fab fa-icon".
-    <a href=''https://fontawesome.com/v6/search?ic=free'' target=''_blank''>Click Here</a>
-    to view the list of availible icons.'
+  description: 'Enable this only when the fields below contain Font Awesome values such as "fa-crown". Leave disabled for Emoji or image URLs.'
+
 font_awsome_color:
   default: "#ffffff"
   type: string
+
 font_awsome_background_color:
   default: "#000000"
   type: string
+
 new_user_flair_icon:
-  default: ""
+  default: "🌱"
   type: string
-  description: "The image URL for the new user trust level (TL0).
-    TIP: Upload your images to a separate local theme component. Once uploaded, right-click on the upload link,
-    copy the image address, then paste the link into this textbox."
+  description: "TL0: Emoji, image URL, or Font Awesome class."
+
 basic_user_flair_icon:
-  default: ""
+  default: "⚔️"
   type: string
-  description: "The image URL for the basic user trust level (TL1)."
+  description: "TL1: Emoji, image URL, or Font Awesome class."
+
 member_flair_icon:
-  default: ""
+  default: "🏅"
   type: string
-  description: "The image URL for the member trust level (TL2)."
+  description: "TL2: Emoji, image URL, or Font Awesome class."
+
 regular_flair_icon:
-  default: ""
+  default: "💎"
   type: string
-  description: "The image URL for the regular trust level (TL3)."
+  description: "TL3: Emoji, image URL, or Font Awesome class."
+
 leader_flair_icon:
-  default: ""
+  default: "👑"
   type: string
-  description: "The image URL for the leader trust level (TL4)."
+  description: "TL4: Emoji, image URL, or Font Awesome class."
+
 exclude_nonhuman_users:
   default: true
   type: bool
-  description: "Flair will not be displayed on system, discobot, and other bot users"
+  description: "Flair will not be displayed on system, discobot, and other bot users."

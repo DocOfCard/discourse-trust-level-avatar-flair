@@ -1,5 +1,17 @@
-# Trust-Level Avatar Flair Theme Component
+# Trust Level Avatar Flair - Emoji Fixed
 
-This theme component allows an admin to add flair to user avatars based on the user’s trust level. Trust level flair displays anywhere on the site that you would normally see group flair. There are a few theme settings to adjust the position of the flair in relation to the avatar.
+A compatibility-fixed build of `tshenry/discourse-trust-level-avatar-flair`.
 
-To learn more, check out: https://meta.discourse.org/t/82656
+## Fix
+
+The upstream component only rendered values containing `fa-`; plain Emoji values produced an empty flair element and only the background circle was visible. This build renders plain Emoji directly while retaining image URL and Font Awesome support.
+
+## Defaults
+
+- TL0: 🌱
+- TL1: ⚔️
+- TL2: 🏅
+- TL3: 💎
+- TL4: 👑
+
+For Emoji, keep **Use Font Awesome** disabled.

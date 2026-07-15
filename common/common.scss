@@ -1,66 +1,37 @@
 @if ($use_font_awesome == "false") {
   @if (str-index($new_user_flair_icon, "http")) {
-    .tl-0 {
-      background-image: url($new_user_flair_icon);
-    }
+    .tl-0 { background-image: url($new_user_flair_icon); }
   }
   @if (str-index($basic_user_flair_icon, "http")) {
-    .tl-1 {
-      background-image: url($basic_user_flair_icon);
-    }
+    .tl-1 { background-image: url($basic_user_flair_icon); }
   }
   @if (str-index($member_flair_icon, "http")) {
-    .tl-2 {
-      background-image: url($member_flair_icon);
-    }
+    .tl-2 { background-image: url($member_flair_icon); }
   }
   @if (str-index($regular_flair_icon, "http")) {
-    .tl-3 {
-      background-image: url($regular_flair_icon);
-    }
+    .tl-3 { background-image: url($regular_flair_icon); }
   }
   @if (str-index($leader_flair_icon, "http")) {
-    .tl-4 {
-      background-image: url($leader_flair_icon);
-    }
+    .tl-4 { background-image: url($leader_flair_icon); }
   }
 } @else {
   @if (str-length($new_user_flair_icon) > 0) {
-    .tl-0,
-    .tl-0 .d-icon-heart {
-      background: $font_awsome_background_color;
-      color: $font_awsome_color !important; // important needed for heart icon
-    }
+    .tl-0, .tl-0 .d-icon-heart { background: $font_awsome_background_color; color: $font_awsome_color !important; }
   }
   @if (str-length($basic_user_flair_icon) > 0) {
-    .tl-1,
-    .tl-1 .d-icon-heart {
-      background: $font_awsome_background_color;
-      color: $font_awsome_color !important; // important needed for heart icon
-    }
+    .tl-1, .tl-1 .d-icon-heart { background: $font_awsome_background_color; color: $font_awsome_color !important; }
   }
   @if (str-length($member_flair_icon) > 0) {
-    .tl-2,
-    .tl-2 .d-icon-heart {
-      background: $font_awsome_background_color;
-      color: $font_awsome_color !important; // important needed for heart icon
-    }
+    .tl-2, .tl-2 .d-icon-heart { background: $font_awsome_background_color; color: $font_awsome_color !important; }
   }
   @if (str-length($regular_flair_icon) > 0) {
-    .tl-3,
-    .tl-3 .d-icon-heart {
-      background: $font_awsome_background_color;
-      color: $font_awsome_color !important; // important needed for heart icon
-    }
+    .tl-3, .tl-3 .d-icon-heart { background: $font_awsome_background_color; color: $font_awsome_color !important; }
   }
   @if (str-length($leader_flair_icon) > 0) {
-    .tl-4,
-    .tl-4 .d-icon-heart {
-      background: $font_awsome_background_color;
-      color: $font_awsome_color !important; // important needed for heart icon
-    }
+    .tl-4, .tl-4 .d-icon-heart { background: $font_awsome_background_color; color: $font_awsome_color !important; }
   }
 }
+
 .tl-flair {
   display: flex;
   align-items: center;
@@ -70,190 +41,96 @@
   position: absolute;
   border-radius: 50%;
 }
+
+.tl-flair:has(.tl-flair-emoji) {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  overflow: visible;
+}
+
+.tl-flair-emoji {
+  display: block;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  line-height: 1;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 55%));
+  user-select: none;
+}
+
 .user-card-avt .tl-flair,
 .user-profile-avt .tl-flair {
   background-size: contain;
   width: 40px;
   height: 40px;
   font-size: 1.75em;
-  .d-icon {
-    height: 0.95em;
-  }
+  .d-icon { height: 0.95em; }
 }
+
 .topic-avatar .tl-flair,
 .collapsed-info .user-profile-avt .tl-flair {
   background-size: contain;
   width: 24px;
   height: 24px;
-  font-size: 0.75em;
-  .d-icon {
-    height: 0.95em;
-  }
+  font-size: 1.05em;
+  .d-icon { height: 0.95em; }
 }
+
 @if $trust_level_flair_position == "overlap" {
-  .user-card-avt .tl-flair {
-    bottom: -2px;
-    right: 12px;
-  }
-  .topic-avatar .tl-flair {
-    bottom: -2px;
-    right: 2px;
-  }
-  .user-profile-avt .tl-flair {
-    bottom: 8px;
-    right: 32px;
-  }
-  .collapsed-info .user-profile-avt .tl-flair {
-    bottom: 8px;
-    right: 12px;
-  }
-  @if $group_flair_always_on_top == "true" {
-    .avatar-flair {
-      z-index: 1;
-    }
-  } @else {
-    .avatar-flair {
-      z-index: initial;
-    }
-  }
+  .user-card-avt .tl-flair { bottom: -2px; right: 12px; }
+  .topic-avatar .tl-flair { bottom: -2px; right: 2px; }
+  .user-profile-avt .tl-flair { bottom: 8px; right: 32px; }
+  .collapsed-info .user-profile-avt .tl-flair { bottom: 8px; right: 12px; }
+  @if $group_flair_always_on_top == "true" { .avatar-flair { z-index: 1; } }
+  @else { .avatar-flair { z-index: initial; } }
 } @else if $trust_level_flair_position == "top-right" {
-  .user-card-avt .tl-flair {
-    top: -2px;
-    right: -4px;
-  }
-  .topic-avatar .tl-flair {
-    top: -2px;
-    right: -8px;
-  }
-  .user-profile-avt .tl-flair {
-    top: -2px;
-    right: 16px;
-  }
-  .collapsed-info .user-profile-avt .tl-flair {
-    top: -2px;
-    right: 2px;
-  }
+  .user-card-avt .tl-flair { top: -2px; right: -4px; }
+  .topic-avatar .tl-flair { top: -2px; right: -8px; }
+  .user-profile-avt .tl-flair { top: -2px; right: 16px; }
+  .collapsed-info .user-profile-avt .tl-flair { top: -2px; right: 2px; }
 } @else if $trust_level_flair_position == "top-left" {
-  .user-card-avt .tl-flair {
-    top: -2px;
-    left: -4px;
-  }
-  .topic-avatar .tl-flair {
-    top: -2px;
-    left: -5px;
-  }
-  .user-profile-avt .tl-flair {
-    top: -2px;
-    left: -4px;
-  }
-  .collapsed-info .user-profile-avt .tl-flair {
-    top: -6px;
-    left: -7px;
-  }
-  .embedded-posts .tl-flair {
-    left: 19px;
-  }
+  .user-card-avt .tl-flair { top: -2px; left: -4px; }
+  .topic-avatar .tl-flair { top: -2px; left: -5px; }
+  .user-profile-avt .tl-flair { top: -2px; left: -4px; }
+  .collapsed-info .user-profile-avt .tl-flair { top: -6px; left: -7px; }
+  .embedded-posts .tl-flair { left: 19px; }
 } @else if $trust_level_flair_position == "bottom-right" {
-  .user-card-avt .tl-flair {
-    bottom: -2px;
-    right: -4px;
-  }
-  .topic-avatar .tl-flair {
-    bottom: -2px;
-    right: -8px;
-  }
-  .user-profile-avt .tl-flair {
-    bottom: 8px;
-    right: 16px;
-  }
-  .collapsed-info .user-profile-avt .tl-flair {
-    bottom: 8px;
-    right: 2px;
-  }
+  .user-card-avt .tl-flair { bottom: -2px; right: -4px; }
+  .topic-avatar .tl-flair { bottom: -2px; right: -8px; }
+  .user-profile-avt .tl-flair { bottom: 8px; right: 16px; }
+  .collapsed-info .user-profile-avt .tl-flair { bottom: 8px; right: 2px; }
   @if $group_flair_always_on_top == "true" {
-    .topic-avatar,
-    .user-card-avatar,
-    .user-profile-avatar {
-      .avatar-flair ~ .tl-avatar-flair,
-      div + div .tl-avatar-flair {
-        display: none;
-      }
+    .topic-avatar, .user-card-avatar, .user-profile-avatar {
+      .avatar-flair ~ .tl-avatar-flair, div + div .tl-avatar-flair { display: none; }
     }
-    .avatar-flair {
-      display: flex;
-    }
-  } @else {
-    .avatar-flair {
-      display: none !important;
-    }
-  }
+    .avatar-flair { display: flex; }
+  } @else { .avatar-flair { display: none !important; } }
 } @else if $trust_level_flair_position == "bottom-left" {
-  .user-card-avt .tl-flair,
-  .topic-avatar .tl-flair {
-    bottom: -2px;
-    left: -5px;
-  }
-  .user-profile-avt .tl-flair {
-    bottom: 8px;
-    left: -4px;
-  }
-  .collapsed-info .user-profile-avt .tl-flair {
-    bottom: 8px;
-    left: -8px;
-  }
-  .embedded-posts .tl-flair {
-    left: 19px;
-  }
+  .user-card-avt .tl-flair, .topic-avatar .tl-flair { bottom: -2px; left: -5px; }
+  .user-profile-avt .tl-flair { bottom: 8px; left: -4px; }
+  .collapsed-info .user-profile-avt .tl-flair { bottom: 8px; left: -8px; }
+  .embedded-posts .tl-flair { left: 19px; }
 }
-.user-main .collapsed-info.about {
-  overflow: initial;
-}
-.user-main .about .details {
-  padding: 15px 15px 4px 15px;
-}
-.user-main .about.collapsed-info .details {
-  padding: 12px 15px 2px 15px;
-}
+
+.user-main .collapsed-info.about { overflow: initial; }
+.user-main .about .details { padding: 15px 15px 4px 15px; }
+.user-main .about.collapsed-info .details { padding: 12px 15px 2px 15px; }
 
 .mobile-view {
   @if $trust_level_flair_position == "overlap" {
-    .user-profile-avt .tl-flair {
-      right: 25px;
-    }
-    .collapsed-info .user-profile-avt .tl-flair {
-      right: 12px;
-    }
+    .user-profile-avt .tl-flair { right: 25px; }
+    .collapsed-info .user-profile-avt .tl-flair { right: 12px; }
   } @else if $trust_level_flair_position == "top-right" {
-    .user-profile-avt .tl-flair {
-      right: 2px;
-    }
-    .collapsed-info .user-profile-avt .tl-flair {
-      top: -4px;
-    }
+    .user-profile-avt .tl-flair { right: 2px; }
+    .collapsed-info .user-profile-avt .tl-flair { top: -4px; }
   } @else if $trust_level_flair_position == "top-left" {
-    .topic-avatar .tl-flair {
-      left: -8px;
-    }
-    .user-profile-avt .tl-flair {
-      left: 2px;
-    }
-    .collapsed-info .user-profile-avt .tl-flair {
-      top: -4px;
-      left: -8px;
-    }
+    .topic-avatar .tl-flair { left: -8px; }
+    .user-profile-avt .tl-flair { left: 2px; }
+    .collapsed-info .user-profile-avt .tl-flair { top: -4px; left: -8px; }
   } @else if $trust_level_flair_position == "bottom-right" {
-    .user-profile-avt .tl-flair {
-      right: 2px;
-    }
+    .user-profile-avt .tl-flair { right: 2px; }
   } @else {
-    .topic-avatar .tl-flair {
-      left: -8px;
-    }
-    .user-profile-avt .tl-flair {
-      left: 2px;
-    }
-    .collapsed-info .user-profile-avt .tl-flair {
-      left: -8px;
-    }
+    .topic-avatar .tl-flair { left: -8px; }
+    .user-profile-avt .tl-flair { left: 2px; }
+    .collapsed-info .user-profile-avt .tl-flair { left: -8px; }
   }
 }

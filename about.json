@@ -1,9 +1,8 @@
 {
-  "name": "Trust Level Avatar Flair",
-  "about_url": "https://meta.discourse.org/t/82656",
-  "license_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair/blob/master/LICENSE",
+  "name": "Trust Level Avatar Flair - Emoji Fixed",
+  "about_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair",
+  "license_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair/blob/main/LICENSE",
   "component": true,
-  "assets": {
-    "template": "assets/template.png"
-  }
+  "version": "1.1.0",
+  "authors": "tshenry; Emoji compatibility fix"
 }
