@@ -1,6 +1,11 @@
-# Trust Level Avatar Flair - Mecha Aligned
+# Trust Level Avatar Flair - Mecha Progression
 
-- v3.1 mecha shield outer frame
-- v6 internal icons
-- Corrects the v6 icon coordinate center from x=36 to the v3.1 shield center x=32
-- Moves the internal icon group 4 units left and 1 unit up
+保留 v3.1 机甲盾徽外框，仅更新内部图标为统一的成长线：
+
+- TL0：小草
+- TL1：单剑
+- TL2：交叉双剑
+- TL3：战旗
+- TL4：皇冠
+
+内部图标已分别居中和缩放。帖子头像处维持较小尺寸。

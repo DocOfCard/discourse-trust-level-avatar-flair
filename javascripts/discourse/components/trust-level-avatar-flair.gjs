@@ -145,12 +145,22 @@ export default class TrustLevelAvatarFlair extends Component {
 
                   <g class="tl-badge-icon" transform="translate(-4 -1)">
                     {{#if this.isTl0}}
-                      <path d="M36 51V31" />
-                      <path d="M35 39C27 39 23 34 23 27c8 0 13 4 13 11" />
-                      <path d="M37 34c1-7 6-11 13-11 0 8-5 13-13 13" />
-                      <path d="M27 53h18" />
+                      <g class="tl-icon-sprout" transform="translate(0 1)">
+                        <path d="M36 51V31" />
+                        <path d="M35 39C27 39 23 34 23 27c8 0 13 4 13 11" />
+                        <path d="M37 34c1-7 6-11 13-11 0 8-5 13-13 13" />
+                        <path d="M27 53h18" />
+                      </g>
                     {{else if this.isTl1}}
-                      <g class="tl-swords">
+                      <g class="tl-single-sword" transform="translate(0 -1)">
+                        <path class="tl-sword-blade" d="M36 17 40 23 38.5 43 33.5 43 32 23Z" />
+                        <path class="tl-sword-ridge" d="M36 21v20" />
+                        <path class="tl-sword-guard" d="M27 44h18" />
+                        <path class="tl-sword-grip" d="M36 45v9" />
+                        <circle class="tl-sword-pommel" cx="36" cy="57" r="2.3" />
+                      </g>
+                    {{else if this.isTl2}}
+                      <g class="tl-swords" transform="translate(0 -1)">
                         <path class="tl-sword-blade" d="M18 19 23 20 43 45 39 49 19 24Z" />
                         <path class="tl-sword-ridge" d="M21 22 41 46" />
                         <path class="tl-sword-guard" d="M35 45 43 37" />
@@ -163,19 +173,22 @@ export default class TrustLevelAvatarFlair extends Component {
                         <path class="tl-sword-grip" d="M31 47 25 53" />
                         <circle class="tl-sword-pommel" cx="23.5" cy="54.5" r="2" />
                       </g>
-                    {{else if this.isTl2}}
-                      <path d="m26 22 10 12 10-12" />
-                      <circle cx="36" cy="43" r="11" />
-                      <path class="tl-badge-icon__fill" d="m36 36 2.5 5 5.5.8-4 4 .9 5.6-4.9-2.6-4.9 2.6.9-5.6-4-4 5.5-.8Z" />
                     {{else if this.isTl3}}
-                      <path class="tl-badge-icon__soft-fill" d="m22 31 8-10h12l8 10-14 22Z" />
-                      <path d="M22 31h28M30 21l6 10 6-10M36 31v22" />
+                      <g class="tl-battle-flag" transform="translate(1 0)">
+                        <path class="tl-flag-pole" d="M27 53V20" />
+                        <path class="tl-flag-pommel" d="M24 20h6" />
+                        <path class="tl-flag-cloth" d="M29 23h21l-5 8 5 8H29Z" />
+                        <path class="tl-flag-fold" d="M31 26h14l-3 5 3 5H31Z" />
+                        <path class="tl-flag-base" d="M22 54h12" />
+                      </g>
                     {{else}}
-                      <path class="tl-badge-icon__soft-fill" d="m21 47-3-20 11 9 7-16 7 16 11-9-3 20Z" />
-                      <path d="M22 52h28" />
-                      <circle class="tl-badge-icon__fill" cx="18" cy="26" r="2" />
-                      <circle class="tl-badge-icon__fill" cx="36" cy="19" r="2" />
-                      <circle class="tl-badge-icon__fill" cx="54" cy="26" r="2" />
+                      <g class="tl-crown" transform="translate(0 1)">
+                        <path class="tl-badge-icon__soft-fill" d="m21 47-3-20 11 9 7-16 7 16 11-9-3 20Z" />
+                        <path d="M22 52h28" />
+                        <circle class="tl-badge-icon__fill" cx="18" cy="26" r="2" />
+                        <circle class="tl-badge-icon__fill" cx="36" cy="19" r="2" />
+                        <circle class="tl-badge-icon__fill" cx="54" cy="26" r="2" />
+                      </g>
                     {{/if}}
                   </g>
                 </g>

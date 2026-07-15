@@ -246,3 +246,32 @@
   stroke: #6e491f;
   stroke-width: 0.9;
 }
+
+/* Unified progression icon set: sprout -> sword -> crossed swords -> battle flag -> crown. */
+.tl-single-sword .tl-sword-blade {
+  fill: #eef2f2;
+  stroke: #ffffff;
+  stroke-width: 1.1;
+}
+
+.tl-battle-flag .tl-flag-pole,
+.tl-battle-flag .tl-flag-pommel,
+.tl-battle-flag .tl-flag-base {
+  fill: none;
+  stroke: #f1d488;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tl-battle-flag .tl-flag-cloth {
+  fill: #f7f8f8;
+  stroke: #ffffff;
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.tl-battle-flag .tl-flag-fold {
+  fill: rgb(0 0 0 / 22%);
+  stroke: none;
+}
