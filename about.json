@@ -1,8 +1,8 @@
 {
-  "name": "Trust Level Avatar Flair - Emoji Fixed",
+  "name": "Trust Level Avatar Flair - Reforged",
   "about_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair",
   "license_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair/blob/main/LICENSE",
   "component": true,
-  "version": "1.1.0",
-  "authors": "tshenry; Emoji compatibility fix"
+  "version": "2.0.0",
+  "authors": "tshenry; Reforged metal shield adaptation"
 }

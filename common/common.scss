@@ -1,112 +1,141 @@
 @if ($use_font_awesome == "false") {
-  @if (str-index($new_user_flair_icon, "http")) {
-    .tl-0 { background-image: url($new_user_flair_icon); }
-  }
-  @if (str-index($basic_user_flair_icon, "http")) {
-    .tl-1 { background-image: url($basic_user_flair_icon); }
-  }
-  @if (str-index($member_flair_icon, "http")) {
-    .tl-2 { background-image: url($member_flair_icon); }
-  }
-  @if (str-index($regular_flair_icon, "http")) {
-    .tl-3 { background-image: url($regular_flair_icon); }
-  }
-  @if (str-index($leader_flair_icon, "http")) {
-    .tl-4 { background-image: url($leader_flair_icon); }
-  }
-} @else {
-  @if (str-length($new_user_flair_icon) > 0) {
-    .tl-0, .tl-0 .d-icon-heart { background: $font_awsome_background_color; color: $font_awsome_color !important; }
-  }
-  @if (str-length($basic_user_flair_icon) > 0) {
-    .tl-1, .tl-1 .d-icon-heart { background: $font_awsome_background_color; color: $font_awsome_color !important; }
-  }
-  @if (str-length($member_flair_icon) > 0) {
-    .tl-2, .tl-2 .d-icon-heart { background: $font_awsome_background_color; color: $font_awsome_color !important; }
-  }
-  @if (str-length($regular_flair_icon) > 0) {
-    .tl-3, .tl-3 .d-icon-heart { background: $font_awsome_background_color; color: $font_awsome_color !important; }
-  }
-  @if (str-length($leader_flair_icon) > 0) {
-    .tl-4, .tl-4 .d-icon-heart { background: $font_awsome_background_color; color: $font_awsome_color !important; }
-  }
+  @if (str-index($new_user_flair_icon, "http")) { .tl-0 { background-image: url($new_user_flair_icon); } }
+  @if (str-index($basic_user_flair_icon, "http")) { .tl-1 { background-image: url($basic_user_flair_icon); } }
+  @if (str-index($member_flair_icon, "http")) { .tl-2 { background-image: url($member_flair_icon); } }
+  @if (str-index($regular_flair_icon, "http")) { .tl-3 { background-image: url($regular_flair_icon); } }
+  @if (str-index($leader_flair_icon, "http")) { .tl-4 { background-image: url($leader_flair_icon); } }
 }
 
 .tl-flair {
+  --tl-accent: #777;
+  --tl-accent-light: #a4a4a4;
+  --tl-accent-dark: #3d3d3d;
+
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   background-repeat: no-repeat;
   background-position: center;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.tl-0 { --tl-accent: #85888d; --tl-accent-light: #b9bdc3; --tl-accent-dark: #44474c; }
+.tl-1 { --tl-accent: #39a84a; --tl-accent-light: #74d780; --tl-accent-dark: #176b29; }
+.tl-2 { --tl-accent: #337dcc; --tl-accent-light: #70b7ff; --tl-accent-dark: #174c88; }
+.tl-3 { --tl-accent: #8d43d6; --tl-accent-light: #c27aff; --tl-accent-dark: #50217e; }
+.tl-4 { --tl-accent: #d57916; --tl-accent-light: #ffb34e; --tl-accent-dark: #824006; }
+
+/* Reforged metal shield. The outer element is the metal rim; ::before is the quality plate. */
+.tl-flair--metal-shield {
+  background:
+    linear-gradient(145deg, #f7f2df 0%, #9b927d 22%, #3b382f 48%, #d7ccb2 72%, #625c4e 100%);
+  clip-path: polygon(50% 0, 94% 15%, 88% 68%, 50% 100%, 12% 68%, 6% 15%);
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 45%));
+  isolation: isolate;
+}
+
+.tl-flair--metal-shield::before {
+  content: "";
   position: absolute;
+  inset: 2px;
+  z-index: -1;
+  clip-path: inherit;
+  background:
+    radial-gradient(circle at 35% 20%, rgb(255 255 255 / 36%), transparent 28%),
+    linear-gradient(145deg, var(--tl-accent-light), var(--tl-accent) 45%, var(--tl-accent-dark));
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 20%);
+}
+
+.tl-flair--metal-shield::after {
+  content: "";
+  position: absolute;
+  top: 12%;
+  left: 23%;
+  width: 54%;
+  height: 18%;
   border-radius: 50%;
+  background: linear-gradient(to bottom, rgb(255 255 255 / 40%), transparent);
+  opacity: 0.72;
+  pointer-events: none;
 }
 
-.tl-flair:has(.tl-flair-emoji) {
-  background-image: none !important;
-  border: 2px solid rgb(255 255 255 / 92%);
-  box-shadow:
-    0 1px 3px rgb(0 0 0 / 45%),
-    inset 0 0 0 1px rgb(0 0 0 / 18%);
-  overflow: hidden;
+.tl-flair-symbol {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 65%);
+  user-select: none;
 }
-
-.tl-flair.tl-0:has(.tl-flair-emoji) { background: #6b7280 !important; }
-.tl-flair.tl-1:has(.tl-flair-emoji) { background: #22c55e !important; }
-.tl-flair.tl-2:has(.tl-flair-emoji) { background: #3b82f6 !important; }
-.tl-flair.tl-3:has(.tl-flair-emoji) { background: #9333ea !important; }
-.tl-flair.tl-4:has(.tl-flair-emoji) { background: #f59e0b !important; }
 
 .tl-flair-emoji {
-  display: block;
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-  line-height: 1;
-  transform: translateY(-0.02em);
-  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 35%));
-  user-select: none;
+  transform: translateY(-1px);
+}
+
+.tl-flair--bare-emoji {
+  background: transparent !important;
+  background-image: none !important;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 50%));
+}
+
+.tl-flair--image {
+  border-radius: 50%;
+  background-size: contain;
 }
 
 .user-card-avt .tl-flair,
 .user-profile-avt .tl-flair {
-  background-size: contain;
-  width: 32px;
-  height: 32px;
-  font-size: 1.15em;
-  .d-icon { height: 0.95em; }
+  width: 30px;
+  height: 33px;
+  font-size: 15px;
+
+  .d-icon { width: 14px; height: 14px; }
 }
 
 .topic-avatar .tl-flair,
 .collapsed-info .user-profile-avt .tl-flair {
-  background-size: contain;
   width: 20px;
-  height: 20px;
-  font-size: 0.78em;
-  .d-icon { height: 0.95em; }
+  height: 22px;
+  font-size: 10px;
+
+  .d-icon { width: 10px; height: 10px; }
 }
 
+/* Image URLs retain the original square footprint. */
+.user-card-avt .tl-flair--image,
+.user-profile-avt .tl-flair--image { width: 34px; height: 34px; }
+.topic-avatar .tl-flair--image,
+.collapsed-info .user-profile-avt .tl-flair--image { width: 22px; height: 22px; }
+
 @if $trust_level_flair_position == "overlap" {
-  .user-card-avt .tl-flair { bottom: -2px; right: 12px; }
-  .topic-avatar .tl-flair { bottom: -2px; right: 2px; }
-  .user-profile-avt .tl-flair { bottom: 8px; right: 32px; }
-  .collapsed-info .user-profile-avt .tl-flair { bottom: 8px; right: 12px; }
-  @if $group_flair_always_on_top == "true" { .avatar-flair { z-index: 1; } }
+  .user-card-avt .tl-flair { bottom: -1px; right: 13px; }
+  .topic-avatar .tl-flair { bottom: -1px; right: 3px; }
+  .user-profile-avt .tl-flair { bottom: 9px; right: 34px; }
+  .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; right: 13px; }
+  @if $group_flair_always_on_top == "true" { .avatar-flair { z-index: 2; } }
   @else { .avatar-flair { z-index: initial; } }
 } @else if $trust_level_flair_position == "top-right" {
-  .user-card-avt .tl-flair { top: -2px; right: -4px; }
-  .topic-avatar .tl-flair { top: -2px; right: -8px; }
-  .user-profile-avt .tl-flair { top: -2px; right: 16px; }
-  .collapsed-info .user-profile-avt .tl-flair { top: -2px; right: 2px; }
+  .user-card-avt .tl-flair { top: -1px; right: -2px; }
+  .topic-avatar .tl-flair { top: -1px; right: -5px; }
+  .user-profile-avt .tl-flair { top: -1px; right: 18px; }
+  .collapsed-info .user-profile-avt .tl-flair { top: -1px; right: 4px; }
 } @else if $trust_level_flair_position == "top-left" {
-  .user-card-avt .tl-flair { top: -2px; left: -4px; }
-  .topic-avatar .tl-flair { top: -2px; left: -5px; }
-  .user-profile-avt .tl-flair { top: -2px; left: -4px; }
-  .collapsed-info .user-profile-avt .tl-flair { top: -6px; left: -7px; }
+  .user-card-avt .tl-flair { top: -1px; left: -2px; }
+  .topic-avatar .tl-flair { top: -1px; left: -3px; }
+  .user-profile-avt .tl-flair { top: -1px; left: -2px; }
+  .collapsed-info .user-profile-avt .tl-flair { top: -4px; left: -5px; }
   .embedded-posts .tl-flair { left: 19px; }
 } @else if $trust_level_flair_position == "bottom-right" {
-  .user-card-avt .tl-flair { bottom: -2px; right: -4px; }
-  .topic-avatar .tl-flair { bottom: -2px; right: -8px; }
-  .user-profile-avt .tl-flair { bottom: 8px; right: 16px; }
-  .collapsed-info .user-profile-avt .tl-flair { bottom: 8px; right: 2px; }
+  .user-card-avt .tl-flair { bottom: -1px; right: -2px; }
+  .topic-avatar .tl-flair { bottom: -1px; right: -5px; }
+  .user-profile-avt .tl-flair { bottom: 9px; right: 18px; }
+  .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; right: 4px; }
   @if $group_flair_always_on_top == "true" {
     .topic-avatar, .user-card-avatar, .user-profile-avatar {
       .avatar-flair ~ .tl-avatar-flair, div + div .tl-avatar-flair { display: none; }
@@ -114,32 +143,32 @@
     .avatar-flair { display: flex; }
   } @else { .avatar-flair { display: none !important; } }
 } @else if $trust_level_flair_position == "bottom-left" {
-  .user-card-avt .tl-flair, .topic-avatar .tl-flair { bottom: -2px; left: -5px; }
-  .user-profile-avt .tl-flair { bottom: 8px; left: -4px; }
-  .collapsed-info .user-profile-avt .tl-flair { bottom: 8px; left: -8px; }
+  .user-card-avt .tl-flair, .topic-avatar .tl-flair { bottom: -1px; left: -3px; }
+  .user-profile-avt .tl-flair { bottom: 9px; left: -2px; }
+  .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; left: -5px; }
   .embedded-posts .tl-flair { left: 19px; }
 }
 
 .user-main .collapsed-info.about { overflow: initial; }
-.user-main .about .details { padding: 15px 15px 4px 15px; }
-.user-main .about.collapsed-info .details { padding: 12px 15px 2px 15px; }
+.user-main .about .details { padding: 15px 15px 4px; }
+.user-main .about.collapsed-info .details { padding: 12px 15px 2px; }
 
 .mobile-view {
   @if $trust_level_flair_position == "overlap" {
-    .user-profile-avt .tl-flair { right: 25px; }
-    .collapsed-info .user-profile-avt .tl-flair { right: 12px; }
+    .user-profile-avt .tl-flair { right: 27px; }
+    .collapsed-info .user-profile-avt .tl-flair { right: 13px; }
   } @else if $trust_level_flair_position == "top-right" {
-    .user-profile-avt .tl-flair { right: 2px; }
-    .collapsed-info .user-profile-avt .tl-flair { top: -4px; }
+    .user-profile-avt .tl-flair { right: 4px; }
+    .collapsed-info .user-profile-avt .tl-flair { top: -3px; }
   } @else if $trust_level_flair_position == "top-left" {
-    .topic-avatar .tl-flair { left: -8px; }
-    .user-profile-avt .tl-flair { left: 2px; }
-    .collapsed-info .user-profile-avt .tl-flair { top: -4px; left: -8px; }
+    .topic-avatar .tl-flair { left: -5px; }
+    .user-profile-avt .tl-flair { left: 4px; }
+    .collapsed-info .user-profile-avt .tl-flair { top: -3px; left: -5px; }
   } @else if $trust_level_flair_position == "bottom-right" {
-    .user-profile-avt .tl-flair { right: 2px; }
+    .user-profile-avt .tl-flair { right: 4px; }
   } @else {
-    .topic-avatar .tl-flair { left: -8px; }
-    .user-profile-avt .tl-flair { left: 2px; }
-    .collapsed-info .user-profile-avt .tl-flair { left: -8px; }
+    .topic-avatar .tl-flair { left: -5px; }
+    .user-profile-avt .tl-flair { left: 4px; }
+    .collapsed-info .user-profile-avt .tl-flair { left: -5px; }
   }
 }

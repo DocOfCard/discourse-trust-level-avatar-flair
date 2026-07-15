@@ -1,3 +1,11 @@
+badge_style:
+  default: "metal-shield"
+  type: enum
+  choices:
+    - "metal-shield"
+    - "bare"
+  description: "Metal shield is the recommended WoW-inspired style. Bare displays the configured Emoji without a badge."
+
 trust_level_flair_position:
   default: "bottom-left"
   type: enum

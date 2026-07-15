@@ -26,6 +26,10 @@ export default class TrustLevelAvatarFlair extends Component {
     return values[this.user?.trust_level]?.trim?.() || "";
   }
 
+  get isImage() {
+    return /^https?:\/\//i.test(this.configuredFlair);
+  }
+
   get trustLevelIcon() {
     const value = this.configuredFlair;
 
@@ -39,16 +43,35 @@ export default class TrustLevelAvatarFlair extends Component {
   get trustLevelEmoji() {
     const value = this.configuredFlair;
 
-    if (
-      !value ||
-      settings.use_font_awesome ||
-      /^https?:\/\//i.test(value) ||
-      value.includes("fa-")
-    ) {
+    if (!value || this.isImage || this.trustLevelIcon) {
       return null;
     }
 
     return value;
+  }
+
+  get useMetalShield() {
+    return settings.badge_style === "metal-shield" && !this.isImage;
+  }
+
+  get flairClass() {
+    const classes = [
+      `tl-${this.user?.trust_level}`,
+      "tl-flair",
+      `tl-flair-${this.user?.username}`,
+    ];
+
+    if (this.useMetalShield) {
+      classes.push("tl-flair--metal-shield");
+    } else if (this.trustLevelEmoji) {
+      classes.push("tl-flair--bare-emoji");
+    }
+
+    if (this.isImage) {
+      classes.push("tl-flair--image");
+    }
+
+    return classes.join(" ");
   }
 
   get trustLevelName() {
@@ -59,14 +82,11 @@ export default class TrustLevelAvatarFlair extends Component {
     {{#unless this.excludableNonhuman}}
       {{#if this.configuredFlair}}
         <div class="tl-avatar-flair">
-          <div
-            title={{this.trustLevelName}}
-            class="tl-{{this.user.trust_level}} tl-flair tl-flair-{{this.user.username}}"
-          >
+          <div title={{this.trustLevelName}} class={{this.flairClass}}>
             {{#if this.trustLevelIcon}}
-              {{icon this.trustLevelIcon}}
+              <span class="tl-flair-symbol">{{icon this.trustLevelIcon}}</span>
             {{else if this.trustLevelEmoji}}
-              <span class="tl-flair-emoji" aria-hidden="true">{{this.trustLevelEmoji}}</span>
+              <span class="tl-flair-symbol tl-flair-emoji" aria-hidden="true">{{this.trustLevelEmoji}}</span>
             {{/if}}
           </div>
         </div>

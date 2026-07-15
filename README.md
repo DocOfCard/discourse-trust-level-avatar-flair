@@ -1,12 +1,19 @@
-# Trust Level Avatar Flair - WoW Badge Edition
+# Trust Level Avatar Flair - Reforged
 
-在原组件基础上增加 Emoji 渲染，并使用更紧凑的魔兽装备品质徽章样式。
+A WoW-inspired metal shield adaptation of `tshenry/discourse-trust-level-avatar-flair`.
 
-默认：
-- TL0 🌱 灰色
-- TL1 ⚔️ 绿色
-- TL2 🏅 蓝色
-- TL3 💎 紫色
-- TL4 👑 橙色
+Default symbols:
 
-安装后关闭 Use Font Awesome。
+- TL0: 🌱
+- TL1: ⚔️
+- TL2: 🏅
+- TL3: 💎
+- TL4: 👑
+
+## Install
+
+Upload the ZIP as a Discourse theme component and add it to the active theme. Disable/remove the original component to avoid duplicate flair.
+
+Keep **Use Font Awesome** disabled for the default Emoji symbols. Choose **metal-shield** under Badge Style.
+
+Image URLs and Font Awesome classes remain supported.
