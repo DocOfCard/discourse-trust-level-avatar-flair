@@ -104,54 +104,44 @@ export default class TrustLevelAvatarFlair extends Component {
         <div class="tl-avatar-flair">
           <div title={{this.trustLevelName}} class={{this.flairClass}}>
             {{#if this.useMechaShield}}
-              <svg class="tl-mecha-badge" viewBox="0 0 72 80" aria-hidden="true">
+              <svg class="tl-mecha-badge" viewBox="0 0 64 72" aria-hidden="true">
                 <g class="tl-mecha-badge__body">
                   <path
-                    class="tl-mecha-badge__outer-shadow"
-                    d="M7 10 Q36 -1 65 10 L63 48 Q60 62 52 69 L36 79 20 69 Q12 62 9 48Z"
-                  />
-                  <path
                     class="tl-mecha-badge__outer"
-                    d="M8 8 Q36 -2 64 8 L62 47 Q59 59 51 66 L36 75 21 66 Q13 59 10 47Z"
-                  />
-                  <path
-                    class="tl-mecha-badge__outer-highlight"
-                    d="M11 10 Q36 1 61 10 L59 15 Q36 8 13 15Z"
-                  />
-                  <path
-                    class="tl-mecha-badge__mid"
-                    d="M12 12 Q36 4 60 12 L58 46 Q55 56 48 62 L36 70 24 62 Q17 56 14 46Z"
+                    d="M32 2 58 10 61 43 52 59 32 70 12 59 3 43 6 10Z"
                   />
                   <path
                     class="tl-mecha-badge__gasket"
-                    d="M15 15 Q36 8 57 15 L55 44 Q52 53 46 58 L36 65 26 58 Q20 53 17 44Z"
+                    d="M32 8 52 14 55 41 47 54 32 63 17 54 9 41 12 14Z"
                   />
                   <path
                     class="tl-mecha-badge__panel"
-                    d="M18 18 Q36 12 54 18 L52 42 Q50 49 44 54 L36 60 28 54 Q22 49 20 42Z"
+                    d="M32 11 49 16 52 39 44 50 32 58 20 50 12 39 15 16Z"
                   />
                   <path
-                    class="tl-mecha-badge__panel-highlight"
-                    d="M19 19 Q36 14 53 19 L52 23 Q36 18 20 23Z"
+                    class="tl-mecha-badge__facet tl-mecha-badge__facet--light"
+                    d="M15 16 32 11 24 31 12 39Z"
                   />
                   <path
-                    class="tl-mecha-badge__panel-left"
-                    d="M19 22 24 25 27 51 22 46 20 42Z"
+                    class="tl-mecha-badge__facet tl-mecha-badge__facet--dark"
+                    d="M49 16 32 11 40 31 52 39Z"
                   />
                   <path
-                    class="tl-mecha-badge__panel-right"
-                    d="M53 22 48 25 45 51 50 46 52 42Z"
+                    class="tl-mecha-badge__facet tl-mecha-badge__facet--lower-dark"
+                    d="M12 39 24 31 32 58 20 50Z"
                   />
                   <path
-                    class="tl-mecha-badge__lower-shadow"
-                    d="M28 54 36 60 44 54 46 58 36 65 26 58Z"
+                    class="tl-mecha-badge__facet tl-mecha-badge__facet--lower-light"
+                    d="M52 39 40 31 32 58 44 50Z"
                   />
-                  <path class="tl-mecha-badge__edge-light" d="M11 13 Q36 4 61 13" />
-                  <path class="tl-mecha-badge__edge-light" d="M13 16 15 45 Q18 56 25 62" />
-                  <path class="tl-mecha-badge__edge-dark" d="M59 16 57 45 Q54 56 47 62" />
-                  <path class="tl-mecha-badge__edge-dark" d="M25 66 36 73 47 66" />
-                  <circle class="tl-mecha-badge__rivet" cx="14.5" cy="17" r="1.25" />
-                  <circle class="tl-mecha-badge__rivet" cx="57.5" cy="17" r="1.25" />
+                  <path
+                    class="tl-mecha-badge__ridge"
+                    d="M11 12 32 5 53 12 49 17 32 12 15 17Z"
+                  />
+                  <circle class="tl-mecha-badge__rivet" cx="11" cy="18" r="1.7" />
+                  <circle class="tl-mecha-badge__rivet" cx="53" cy="18" r="1.7" />
+                  <circle class="tl-mecha-badge__rivet" cx="16" cy="50" r="1.5" />
+                  <circle class="tl-mecha-badge__rivet" cx="48" cy="50" r="1.5" />
 
                   <g class="tl-badge-icon">
                     {{#if this.isTl0}}
