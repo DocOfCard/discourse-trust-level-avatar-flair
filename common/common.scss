@@ -35,32 +35,32 @@
 .user-card-avt .tl-flair,
 .user-profile-avt .tl-flair { height: 38px; min-width: 0; max-width: none; font-size: 18px; }
 .topic-avatar .tl-flair,
-.collapsed-info .user-profile-avt .tl-flair { height: 17px; min-width: 0; max-width: none; font-size: 10px; }
+.collapsed-info .user-profile-avt .tl-flair { height: 19px; min-width: 0; max-width: none; font-size: 10px; z-index: 10; }
 
 @if $trust_level_flair_position == "overlap" {
   .user-card-avt .tl-flair { bottom: -1px; right: 13px; }
-  .topic-avatar .tl-flair { bottom: 0; right: 5px; }
+  .topic-avatar .tl-flair { bottom: -4px; right: -5px; }
   .user-profile-avt .tl-flair { bottom: 9px; right: 34px; }
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; right: 13px; }
   @if $group_flair_always_on_top == "true" { .avatar-flair { z-index: 2; } }
 } @else if $trust_level_flair_position == "top-right" {
   .user-card-avt .tl-flair { top: -1px; right: -2px; }
-  .topic-avatar .tl-flair { top: 0; right: -2px; }
+  .topic-avatar .tl-flair { top: -4px; right: -5px; }
   .user-profile-avt .tl-flair { top: -1px; right: 18px; }
   .collapsed-info .user-profile-avt .tl-flair { top: -1px; right: 4px; }
 } @else if $trust_level_flair_position == "top-left" {
   .user-card-avt .tl-flair { top: -1px; left: -2px; }
-  .topic-avatar .tl-flair { top: 0; left: -1px; }
+  .topic-avatar .tl-flair { top: -4px; left: -5px; }
   .user-profile-avt .tl-flair { top: -1px; left: -2px; }
   .collapsed-info .user-profile-avt .tl-flair { top: -4px; left: -5px; }
 } @else if $trust_level_flair_position == "bottom-right" {
   .user-card-avt .tl-flair { bottom: -4px; right: -7px; }
-  .topic-avatar .tl-flair { bottom: -1px; right: -2px; }
+  .topic-avatar .tl-flair { bottom: -4px; right: -5px; }
   .user-profile-avt .tl-flair { bottom: 9px; right: 18px; }
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; right: 4px; }
 } @else {
   .user-card-avt .tl-flair { bottom: -4px; left: -7px; }
-  .topic-avatar .tl-flair { bottom: -1px; left: -2px; }
+  .topic-avatar .tl-flair { bottom: -4px; left: -5px; }
   .user-profile-avt .tl-flair { bottom: 9px; left: -2px; }
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; left: -5px; }
 }
@@ -73,10 +73,23 @@
 .user-card-avt .tl-2, .user-profile-avt .tl-2 { width: 25.93px; min-width: 0 !important; }
 .user-card-avt .tl-3, .user-profile-avt .tl-3 { width: 25.66px; min-width: 0 !important; }
 .user-card-avt .tl-4, .user-profile-avt .tl-4 { width: 29.40px; min-width: 0 !important; }
-.topic-avatar .tl-0, .collapsed-info .user-profile-avt .tl-0 { width: 11.51px; min-width: 0 !important; }
-.topic-avatar .tl-1, .collapsed-info .user-profile-avt .tl-1 { width: 11.53px; min-width: 0 !important; }
-.topic-avatar .tl-2, .collapsed-info .user-profile-avt .tl-2 { width: 11.60px; min-width: 0 !important; }
-.topic-avatar .tl-3, .collapsed-info .user-profile-avt .tl-3 { width: 11.48px; min-width: 0 !important; }
-.topic-avatar .tl-4, .collapsed-info .user-profile-avt .tl-4 { width: 13.15px; min-width: 0 !important; }
+.topic-avatar .tl-0, .collapsed-info .user-profile-avt .tl-0 { width: 12.86px; min-width: 0 !important; }
+.topic-avatar .tl-1, .collapsed-info .user-profile-avt .tl-1 { width: 12.89px; min-width: 0 !important; }
+.topic-avatar .tl-2, .collapsed-info .user-profile-avt .tl-2 { width: 12.96px; min-width: 0 !important; }
+.topic-avatar .tl-3, .collapsed-info .user-profile-avt .tl-3 { width: 12.83px; min-width: 0 !important; }
+.topic-avatar .tl-4, .collapsed-info .user-profile-avt .tl-4 { width: 14.70px; min-width: 0 !important; }
+
+/* Allow topic badges to sit slightly outside the avatar without clipping. */
+.topic-avatar,
+.topic-avatar .post-avatar,
+.topic-avatar .main-avatar {
+  overflow: visible !important;
+}
+
+.topic-avatar .tl-avatar-flair {
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+}
 
 .user-main .collapsed-info.about { overflow: initial; }
