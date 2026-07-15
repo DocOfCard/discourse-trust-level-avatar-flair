@@ -7,10 +7,9 @@
 }
 
 .tl-flair {
-  --tl-accent: #777;
-  --tl-accent-light: #a4a4a4;
-  --tl-accent-dark: #3d3d3d;
-
+  --tl-accent: #73777d;
+  --tl-accent-light: #aeb3b8;
+  --tl-accent-dark: #34383e;
   position: absolute;
   display: flex;
   align-items: center;
@@ -21,103 +20,40 @@
   z-index: 1;
 }
 
-.tl-0 { --tl-accent: #85888d; --tl-accent-light: #b9bdc3; --tl-accent-dark: #44474c; }
-.tl-1 { --tl-accent: #39a84a; --tl-accent-light: #74d780; --tl-accent-dark: #176b29; }
-.tl-2 { --tl-accent: #337dcc; --tl-accent-light: #70b7ff; --tl-accent-dark: #174c88; }
-.tl-3 { --tl-accent: #8d43d6; --tl-accent-light: #c27aff; --tl-accent-dark: #50217e; }
-.tl-4 { --tl-accent: #d57916; --tl-accent-light: #ffb34e; --tl-accent-dark: #824006; }
+.tl-0 { --tl-accent: #686d72; --tl-accent-light: #aeb4b9; --tl-accent-dark: #30343a; }
+.tl-1 { --tl-accent: #247d35; --tl-accent-light: #4dbb62; --tl-accent-dark: #123f20; }
+.tl-2 { --tl-accent: #2469ae; --tl-accent-light: #4f9eea; --tl-accent-dark: #123b69; }
+.tl-3 { --tl-accent: #7435aa; --tl-accent-light: #aa63df; --tl-accent-dark: #3d195f; }
+.tl-4 { --tl-accent: #b65b0c; --tl-accent-light: #ed9234; --tl-accent-dark: #632d05; }
 
-/* Layered metal shield, tuned to match the larger WoW-style reference. */
-.tl-flair--metal-shield {
-  --shield-shape: polygon(
-    50% 0%,
-    93% 14%,
-    90% 59%,
-    76% 82%,
-    50% 100%,
-    24% 82%,
-    10% 59%,
-    7% 14%
-  );
-
-  clip-path: var(--shield-shape);
-  isolation: isolate;
-  overflow: hidden;
-
-  /* Dark outer lip + bright silver face, like a thick metal badge. */
-  background:
-    linear-gradient(145deg,
-      #2e3035 0%,
-      #777b84 8%,
-      #f8f8f3 19%,
-      #a8abb1 37%,
-      #555961 55%,
-      #e8e5d9 76%,
-      #777b82 90%,
-      #292b30 100%);
-
-  filter:
-    drop-shadow(0 1px 1px rgb(0 0 0 / 72%))
-    drop-shadow(0 2px 2px rgb(0 0 0 / 38%));
+.tl-flair--mecha-shield {
+  background: transparent !important;
+  background-image: none !important;
+  overflow: visible;
 }
 
-/* Inner quality-color plate. The larger inset creates the thick rim from the reference. */
-.tl-flair--metal-shield::before {
-  content: "";
-  position: absolute;
-  inset: 3px 3px 4px;
-  z-index: -1;
-  clip-path: var(--shield-shape);
-  background:
-    radial-gradient(ellipse at 32% 20%, rgb(255 255 255 / 48%) 0 8%, transparent 34%),
-    linear-gradient(150deg,
-      var(--tl-accent-light) 0%,
-      var(--tl-accent) 42%,
-      var(--tl-accent-dark) 78%,
-      #1d1f24 115%);
-  box-shadow:
-    inset 0 0 0 1px rgb(255 255 255 / 24%),
-    inset 0 -3px 5px rgb(0 0 0 / 28%),
-    inset 0 2px 3px rgb(255 255 255 / 16%);
+.tl-mecha-badge {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
-/* Metallic top bevel and lower reflected edge. */
-.tl-flair--metal-shield::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  clip-path: var(--shield-shape);
-  pointer-events: none;
-  background:
-    linear-gradient(to bottom,
-      rgb(255 255 255 / 62%) 0%,
-      rgb(255 255 255 / 14%) 15%,
-      transparent 31%,
-      transparent 72%,
-      rgb(255 255 255 / 12%) 88%,
-      rgb(0 0 0 / 22%) 100%);
-  mix-blend-mode: screen;
-  opacity: .68;
+.tl-badge-icon {
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 85%));
 }
 
 .tl-flair-symbol {
-  position: relative;
-  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   line-height: 1;
-  text-shadow:
-    0 1px 1px rgb(0 0 0 / 82%),
-    0 0 2px rgb(0 0 0 / 38%);
-  user-select: none;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 82%);
 }
 
 .tl-flair-emoji {
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-  transform: translateY(-1px) scale(.94);
 }
 
 .tl-flair--bare-emoji {
@@ -131,51 +67,50 @@
   background-size: contain;
 }
 
+/* User card / profile: prominent but not oversized. */
 .user-card-avt .tl-flair,
 .user-profile-avt .tl-flair {
-  width: 38px;
-  height: 42px;
-  font-size: 19px;
-
-  .d-icon { width: 18px; height: 18px; }
+  width: 34px;
+  height: 38px;
+  font-size: 18px;
+  .d-icon { width: 17px; height: 17px; }
 }
 
+/* Topic post avatar: deliberately smaller and quieter. */
 .topic-avatar .tl-flair,
 .collapsed-info .user-profile-avt .tl-flair {
-  width: 25px;
-  height: 28px;
-  font-size: 13px;
-
-  .d-icon { width: 12px; height: 12px; }
+  width: 17px;
+  height: 19px;
+  font-size: 10px;
+  .d-icon { width: 9px; height: 9px; }
 }
 
-/* Image URLs retain the original square footprint. */
 .user-card-avt .tl-flair--image,
-.user-profile-avt .tl-flair--image { width: 34px; height: 34px; }
+.user-profile-avt .tl-flair--image { width: 32px; height: 32px; }
 .topic-avatar .tl-flair--image,
-.collapsed-info .user-profile-avt .tl-flair--image { width: 22px; height: 22px; }
+.collapsed-info .user-profile-avt .tl-flair--image { width: 17px; height: 17px; }
 
 @if $trust_level_flair_position == "overlap" {
   .user-card-avt .tl-flair { bottom: -1px; right: 13px; }
-  .topic-avatar .tl-flair { bottom: -1px; right: 3px; }
+  .topic-avatar .tl-flair { bottom: 0; right: 5px; }
   .user-profile-avt .tl-flair { bottom: 9px; right: 34px; }
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; right: 13px; }
   @if $group_flair_always_on_top == "true" { .avatar-flair { z-index: 2; } }
   @else { .avatar-flair { z-index: initial; } }
 } @else if $trust_level_flair_position == "top-right" {
   .user-card-avt .tl-flair { top: -1px; right: -2px; }
-  .topic-avatar .tl-flair { top: -1px; right: -5px; }
+  .topic-avatar .tl-flair { top: 0; right: -2px; }
   .user-profile-avt .tl-flair { top: -1px; right: 18px; }
   .collapsed-info .user-profile-avt .tl-flair { top: -1px; right: 4px; }
 } @else if $trust_level_flair_position == "top-left" {
   .user-card-avt .tl-flair { top: -1px; left: -2px; }
-  .topic-avatar .tl-flair { top: -1px; left: -3px; }
+  .topic-avatar .tl-flair { top: 0; left: -1px; }
   .user-profile-avt .tl-flair { top: -1px; left: -2px; }
   .collapsed-info .user-profile-avt .tl-flair { top: -4px; left: -5px; }
   .embedded-posts .tl-flair { left: 19px; }
 } @else if $trust_level_flair_position == "bottom-right" {
   .user-card-avt .tl-flair { bottom: -4px; right: -7px; }
-  .topic-avatar .tl-flair { bottom: -3px; right: -6px; }
+  .topic-avatar .tl-flair { bottom: -1px; right: -2px; }
   .user-profile-avt .tl-flair { bottom: 9px; right: 18px; }
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; right: 4px; }
   @if $group_flair_always_on_top == "true" {
@@ -186,7 +121,7 @@
   } @else { .avatar-flair { display: none !important; } }
 } @else if $trust_level_flair_position == "bottom-left" {
   .user-card-avt .tl-flair { bottom: -4px; left: -7px; }
-  .topic-avatar .tl-flair { bottom: -3px; left: -6px; }
+  .topic-avatar .tl-flair { bottom: -1px; left: -2px; }
   .user-profile-avt .tl-flair { bottom: 9px; left: -2px; }
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; left: -5px; }
   .embedded-posts .tl-flair { left: 19px; }
@@ -202,16 +137,13 @@
     .collapsed-info .user-profile-avt .tl-flair { right: 13px; }
   } @else if $trust_level_flair_position == "top-right" {
     .user-profile-avt .tl-flair { right: 4px; }
-    .collapsed-info .user-profile-avt .tl-flair { top: -3px; }
   } @else if $trust_level_flair_position == "top-left" {
-    .topic-avatar .tl-flair { left: -5px; }
+    .topic-avatar .tl-flair { left: -1px; }
     .user-profile-avt .tl-flair { left: 4px; }
-    .collapsed-info .user-profile-avt .tl-flair { top: -3px; left: -5px; }
   } @else if $trust_level_flair_position == "bottom-right" {
     .user-profile-avt .tl-flair { right: 4px; }
   } @else {
-    .topic-avatar .tl-flair { left: -5px; }
+    .topic-avatar .tl-flair { left: -2px; }
     .user-profile-avt .tl-flair { left: 4px; }
-    .collapsed-info .user-profile-avt .tl-flair { left: -5px; }
   }
 }

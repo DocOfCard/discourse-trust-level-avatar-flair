@@ -1,8 +1,6 @@
 {
-  "name": "Trust Level Avatar Flair - Reforged Shield v2",
-  "about_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair",
+  "name": "Trust Level Avatar Flair - Mecha Shield v3",
+  "about_url": "https://meta.discourse.org/t/82656",
   "license_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair/blob/main/LICENSE",
-  "component": true,
-  "version": "2.0.0",
-  "authors": "tshenry; Reforged metal shield adaptation"
+  "component": true
 }
