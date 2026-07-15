@@ -1,12 +1,7 @@
-# Trust Level Avatar Flair - Simplified SVG Set
+# Trust Level Avatar Flair - Simplified SVG Set v4.1.1
 
-Uses the site-provided simplified `2.svg`, physically split into five independent optimized SVG files.
-
-Colors:
-- TL0 green
-- TL1 blue
-- TL2 crimson
-- TL3 bronze/brown
-- TL4 purple/gold
-
-The white source canvas and outer CSS shadow are removed.
+Fixes:
+- TL0 only recolors the inner panel green; the metal frame remains silver/black.
+- Removes SVG viewBox padding.
+- Uses per-badge aspect-ratio widths and clears min-width constraints, removing left/right empty space.
+- No external badge shadow.

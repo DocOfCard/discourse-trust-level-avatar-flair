@@ -27,9 +27,9 @@
 .tl-flair-emoji { font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif; }
 
 .user-card-avt .tl-flair,
-.user-profile-avt .tl-flair { width: 38px; height: 38px; font-size: 18px; }
+.user-profile-avt .tl-flair { height: 38px; min-width: 0; max-width: none; font-size: 18px; }
 .topic-avatar .tl-flair,
-.collapsed-info .user-profile-avt .tl-flair { width: 17px; height: 17px; font-size: 10px; }
+.collapsed-info .user-profile-avt .tl-flair { height: 17px; min-width: 0; max-width: none; font-size: 10px; }
 
 @if $trust_level_flair_position == "overlap" {
   .user-card-avt .tl-flair { bottom: -1px; right: 13px; }
@@ -58,4 +58,17 @@
   .user-profile-avt .tl-flair { bottom: 9px; left: -2px; }
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; left: -5px; }
 }
+
+/* Match each SVG's actual aspect ratio instead of forcing a square container. */
+.user-card-avt .tl-0, .user-profile-avt .tl-0 { width: 27.3px; }
+.user-card-avt .tl-1, .user-profile-avt .tl-1 { width: 27.5px; }
+.user-card-avt .tl-2, .user-profile-avt .tl-2 { width: 27.4px; }
+.user-card-avt .tl-3, .user-profile-avt .tl-3 { width: 27.7px; }
+.user-card-avt .tl-4, .user-profile-avt .tl-4 { width: 30.8px; }
+.topic-avatar .tl-0, .collapsed-info .user-profile-avt .tl-0 { width: 12.2px; }
+.topic-avatar .tl-1, .collapsed-info .user-profile-avt .tl-1 { width: 12.3px; }
+.topic-avatar .tl-2, .collapsed-info .user-profile-avt .tl-2 { width: 12.2px; }
+.topic-avatar .tl-3, .collapsed-info .user-profile-avt .tl-3 { width: 12.4px; }
+.topic-avatar .tl-4, .collapsed-info .user-profile-avt .tl-4 { width: 13.8px; }
+
 .user-main .collapsed-info.about { overflow: initial; }
