@@ -1,13 +1,13 @@
 {
-  "name": "Trust Level Avatar Flair - Split SVG Fixed",
+  "name": "Trust Level Avatar Flair - Simplified SVG Set",
   "component": true,
   "authors": "OpenAI; based on Trust Level Avatar Flair by tshenry; badge artwork supplied by site owner",
-  "theme_version": "4.0.3",
+  "theme_version": "4.1.0",
   "minimum_discourse_version": "3.3.0.beta1",
   "about_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair",
   "license_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair/blob/main/LICENSE",
-  "description": "Five physically separated SVG badge assets. Each file contains only its own badge paths; TL2 uses a blue panel. Outer CSS shadow removed.",
-  "version": "4.0.3",
+  "description": "Five physically separated and optimized SVG trust-level badges from the site-provided simplified artwork. TL0 is green, TL1 blue, TL2 crimson; no outer CSS shadow.",
+  "version": "4.1.0",
   "assets": {
     "badge_tl0": "assets/badge-tl0.svg",
     "badge_tl1": "assets/badge-tl1.svg",
