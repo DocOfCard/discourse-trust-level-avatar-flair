@@ -73,14 +73,14 @@
   width: 34px;
   height: 38px;
   font-size: 18px;
-  .d-icon { width: 17px; height: 17px; }
+  .d-icon { width: 15px; height: 15px; }
 }
 
 /* Topic post avatar: deliberately smaller and quieter. */
 .topic-avatar .tl-flair,
 .collapsed-info .user-profile-avt .tl-flair {
-  width: 17px;
-  height: 19px;
+  width: 15px;
+  height: 17px;
   font-size: 10px;
   .d-icon { width: 9px; height: 9px; }
 }
@@ -88,7 +88,7 @@
 .user-card-avt .tl-flair--image,
 .user-profile-avt .tl-flair--image { width: 32px; height: 32px; }
 .topic-avatar .tl-flair--image,
-.collapsed-info .user-profile-avt .tl-flair--image { width: 17px; height: 17px; }
+.collapsed-info .user-profile-avt .tl-flair--image { width: 15px; height: 15px; }
 
 @if $trust_level_flair_position == "overlap" {
   .user-card-avt .tl-flair { bottom: -1px; right: 13px; }
@@ -148,69 +148,133 @@
   }
 }
 
-/* SVG shield rendering. No dynamic SVG ids or template helpers are required. */
+/* Layered heraldic armor badge. All geometry is static SVG for strict-template compatibility. */
 .tl-mecha-badge__body {
-  filter: drop-shadow(0 2px 1.5px rgb(0 0 0 / 72%));
+  filter: drop-shadow(0 1.8px 1.4px rgb(0 0 0 / 78%));
+}
+
+.tl-mecha-badge__outer-shadow {
+  fill: #090b0e;
 }
 
 .tl-mecha-badge__outer {
-  fill: #8d949b;
-  stroke: #101419;
-  stroke-width: 2.4;
+  fill: #77746a;
+  stroke: #17191c;
+  stroke-width: 1.8;
+  stroke-linejoin: miter;
+}
+
+.tl-mecha-badge__outer-highlight {
+  fill: #ddd7bd;
+  opacity: 0.88;
+}
+
+.tl-mecha-badge__mid {
+  fill: #aaa58f;
+  stroke: #44433e;
+  stroke-width: 1.3;
+  stroke-linejoin: miter;
 }
 
 .tl-mecha-badge__gasket {
-  fill: #151a20;
-  stroke: #05080a;
-  stroke-width: 1.8;
+  fill: #20252a;
+  stroke: #0b0e11;
+  stroke-width: 1.5;
+  stroke-linejoin: miter;
 }
 
 .tl-mecha-badge__panel {
   fill: var(--tl-accent);
-  stroke: rgb(255 255 255 / 42%);
-  stroke-width: 1.2;
+  stroke: var(--tl-accent-dark);
+  stroke-width: 1.35;
+  stroke-linejoin: miter;
 }
 
-.tl-mecha-badge__facet--light {
-  fill: rgb(255 255 255 / 18%);
+.tl-mecha-badge__panel-highlight {
+  fill: rgb(255 255 255 / 16%);
 }
 
-.tl-mecha-badge__facet--dark {
-  fill: rgb(0 0 0 / 24%);
+.tl-mecha-badge__panel-left {
+  fill: rgb(255 255 255 / 9%);
 }
 
-.tl-mecha-badge__facet--lower-dark {
+.tl-mecha-badge__panel-right {
   fill: rgb(0 0 0 / 20%);
 }
 
-.tl-mecha-badge__facet--lower-light {
-  fill: rgb(255 255 255 / 8%);
+.tl-mecha-badge__lower-shadow {
+  fill: rgb(0 0 0 / 28%);
 }
 
-.tl-mecha-badge__ridge {
-  fill: rgb(255 255 255 / 38%);
+.tl-mecha-badge__edge-light,
+.tl-mecha-badge__edge-dark {
+  fill: none;
+  stroke-width: 1.15;
+  stroke-linecap: square;
+}
+
+.tl-mecha-badge__edge-light {
+  stroke: rgb(255 255 255 / 52%);
+}
+
+.tl-mecha-badge__edge-dark {
+  stroke: rgb(0 0 0 / 48%);
 }
 
 .tl-mecha-badge__rivet {
-  fill: #c7ccd0;
-  stroke: #2b3137;
-  stroke-width: 0.8;
+  fill: #d7d2bd;
+  stroke: #3c3c38;
+  stroke-width: 0.65;
 }
 
 .tl-badge-icon {
   fill: none;
-  stroke: #f7f8f8;
-  stroke-width: 4;
+  stroke: #f3f5f5;
+  stroke-width: 3.1;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 85%));
+  filter: drop-shadow(0 1px 0.8px rgb(0 0 0 / 88%));
 }
 
 .tl-badge-icon__fill {
-  fill: #f7f8f8;
+  fill: #f3f5f5;
   stroke: none;
 }
 
 .tl-badge-icon__soft-fill {
-  fill: rgb(255 255 255 / 15%);
+  fill: rgb(255 255 255 / 14%);
+}
+
+.tl-sword-blade {
+  fill: #e9eeee;
+  stroke: #fcffff;
+  stroke-width: 1.1;
+  stroke-linejoin: miter;
+}
+
+.tl-sword-ridge {
+  fill: none;
+  stroke: #aeb8b8;
+  stroke-width: 0.9;
+  stroke-linecap: square;
+}
+
+.tl-sword-guard {
+  fill: none;
+  stroke: #f6d883;
+  stroke-width: 2.5;
+  stroke-linecap: square;
+}
+
+.tl-sword-grip {
+  fill: none;
+  stroke: #8d5b2c;
+  stroke-width: 3;
+  stroke-linecap: butt;
+}
+
+.tl-sword-pommel {
+  fill: #d8b963;
+  stroke: #6e491f;
+  stroke-width: 0.9;
 }

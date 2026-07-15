@@ -104,84 +104,86 @@ export default class TrustLevelAvatarFlair extends Component {
         <div class="tl-avatar-flair">
           <div title={{this.trustLevelName}} class={{this.flairClass}}>
             {{#if this.useMechaShield}}
-              <svg class="tl-mecha-badge" viewBox="0 0 64 72" aria-hidden="true">
+              <svg class="tl-mecha-badge" viewBox="0 0 72 80" aria-hidden="true">
                 <g class="tl-mecha-badge__body">
                   <path
+                    class="tl-mecha-badge__outer-shadow"
+                    d="M9 7 63 7 69 13 67 50 58 66 36 78 14 66 5 50 3 13Z"
+                  />
+                  <path
                     class="tl-mecha-badge__outer"
-                    d="M32 2 60 11 59 42 52 59 32 71 12 59 5 42 4 11Z"
+                    d="M10 5 62 5 68 12 66 49 57 64 36 75 15 64 6 49 4 12Z"
+                  />
+                  <path
+                    class="tl-mecha-badge__outer-highlight"
+                    d="M11 7 61 7 65 12 63 16 58 12 14 12 9 16 7 12Z"
+                  />
+                  <path
+                    class="tl-mecha-badge__mid"
+                    d="M13 10 59 10 63 15 61 47 53 60 36 69 19 60 11 47 9 15Z"
                   />
                   <path
                     class="tl-mecha-badge__gasket"
-                    d="M32 8 53 15 52 39 46 53 32 62 18 53 12 39 11 15Z"
+                    d="M16 14 56 14 59 18 57 45 50 56 36 64 22 56 15 45 13 18Z"
                   />
                   <path
                     class="tl-mecha-badge__panel"
-                    d="M32 12 49 18 48 37 43 48 32 56 21 48 16 37 15 18Z"
+                    d="M18 17 54 17 56 20 54 43 48 53 36 60 24 53 18 43 16 20Z"
                   />
                   <path
-                    class="tl-mecha-badge__facet tl-mecha-badge__facet--light"
-                    d="M15 18 32 12 25 30 16 37Z"
+                    class="tl-mecha-badge__panel-highlight"
+                    d="M18 18 54 18 55 21 52 24 20 24 17 21Z"
                   />
                   <path
-                    class="tl-mecha-badge__facet tl-mecha-badge__facet--dark"
-                    d="M49 18 32 12 39 30 48 37Z"
+                    class="tl-mecha-badge__panel-left"
+                    d="M17 21 22 25 24 52 18 43Z"
                   />
                   <path
-                    class="tl-mecha-badge__facet tl-mecha-badge__facet--lower-dark"
-                    d="M16 37 25 30 32 56 21 48Z"
+                    class="tl-mecha-badge__panel-right"
+                    d="M55 21 50 25 48 52 54 43Z"
                   />
                   <path
-                    class="tl-mecha-badge__facet tl-mecha-badge__facet--lower-light"
-                    d="M48 37 39 30 32 56 43 48Z"
+                    class="tl-mecha-badge__lower-shadow"
+                    d="M24 53 36 60 48 53 50 56 36 64 22 56Z"
                   />
-                  <path
-                    class="tl-mecha-badge__ridge"
-                    d="M8 12 32 5 56 12 50 18 32 12 14 18Z"
-                  />
-                  <circle class="tl-mecha-badge__rivet" cx="10" cy="18" r="1.7" />
-                  <circle class="tl-mecha-badge__rivet" cx="54" cy="18" r="1.7" />
-                  <circle class="tl-mecha-badge__rivet" cx="15" cy="51" r="1.5" />
-                  <circle class="tl-mecha-badge__rivet" cx="49" cy="51" r="1.5" />
+                  <path class="tl-mecha-badge__edge-light" d="M10 12 13 15 15 45 22 57" />
+                  <path class="tl-mecha-badge__edge-dark" d="M62 12 59 15 57 45 50 57" />
+                  <circle class="tl-mecha-badge__rivet" cx="12.5" cy="17" r="1.35" />
+                  <circle class="tl-mecha-badge__rivet" cx="59.5" cy="17" r="1.35" />
 
                   <g class="tl-badge-icon">
                     {{#if this.isTl0}}
-                      <path d="M32 48V30" />
-                      <path d="M31 35C22 34 18 29 18 22c8-1 14 3 15 10" />
-                      <path d="M33 30c2-7 7-10 14-9 0 7-5 12-14 12" />
-                      <path d="M24 49h16" />
+                      <path d="M36 51V31" />
+                      <path d="M35 39C27 39 23 34 23 27c8 0 13 4 13 11" />
+                      <path d="M37 34c1-7 6-11 13-11 0 8-5 13-13 13" />
+                      <path d="M27 53h18" />
                     {{else if this.isTl1}}
-                      <path class="tl-badge-icon__fill" d="M19 18 24 20 43 43 39 47 20 24Z" />
-                      <path class="tl-badge-icon__soft-fill" d="M21 20 24 21 41 42 39 44 22 23Z" />
-                      <path d="M37 43 43 49" />
-                      <path d="M35 46 40 41" />
-                      <path d="M42 49 46 53" />
-                      <path class="tl-badge-icon__fill" d="M45 18 40 20 21 43 25 47 44 24Z" />
-                      <path class="tl-badge-icon__soft-fill" d="M43 20 40 21 23 42 25 44 42 23Z" />
-                      <path d="M27 43 21 49" />
-                      <path d="M29 46 24 41" />
-                      <path d="M22 49 18 53" />
+                      <g class="tl-swords">
+                        <path class="tl-sword-blade" d="M18 19 23 20 43 45 39 49 19 24Z" />
+                        <path class="tl-sword-ridge" d="M21 22 41 46" />
+                        <path class="tl-sword-guard" d="M35 45 43 37" />
+                        <path class="tl-sword-grip" d="M41 47 47 53" />
+                        <circle class="tl-sword-pommel" cx="48.5" cy="54.5" r="2" />
+
+                        <path class="tl-sword-blade" d="M54 19 49 20 29 45 33 49 53 24Z" />
+                        <path class="tl-sword-ridge" d="M51 22 31 46" />
+                        <path class="tl-sword-guard" d="M37 45 29 37" />
+                        <path class="tl-sword-grip" d="M31 47 25 53" />
+                        <circle class="tl-sword-pommel" cx="23.5" cy="54.5" r="2" />
+                      </g>
                     {{else if this.isTl2}}
-                      <path d="m24 19 8 11 8-11" />
-                      <circle cx="32" cy="40" r="11" />
-                      <path
-                        class="tl-badge-icon__fill"
-                        d="m32 33 2.4 4.7 5.3.8-3.8 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.8-3.8 5.3-.8Z"
-                      />
+                      <path d="m26 22 10 12 10-12" />
+                      <circle cx="36" cy="43" r="11" />
+                      <path class="tl-badge-icon__fill" d="m36 36 2.5 5 5.5.8-4 4 .9 5.6-4.9-2.6-4.9 2.6.9-5.6-4-4 5.5-.8Z" />
                     {{else if this.isTl3}}
-                      <path
-                        class="tl-badge-icon__soft-fill"
-                        d="m19 28 7-9h12l7 9-13 21Z"
-                      />
-                      <path d="M19 28h26M26 19l6 9 6-9M32 28v21" />
+                      <path class="tl-badge-icon__soft-fill" d="m22 31 8-10h12l8 10-14 22Z" />
+                      <path d="M22 31h28M30 21l6 10 6-10M36 31v22" />
                     {{else}}
-                      <path
-                        class="tl-badge-icon__soft-fill"
-                        d="m18 43-3-18 10 8 7-14 7 14 10-8-3 18Z"
-                      />
-                      <path d="M19 48h26" />
-                      <circle class="tl-badge-icon__fill" cx="15" cy="24" r="2" />
-                      <circle class="tl-badge-icon__fill" cx="32" cy="18" r="2" />
-                      <circle class="tl-badge-icon__fill" cx="49" cy="24" r="2" />
+                      <path class="tl-badge-icon__soft-fill" d="m21 47-3-20 11 9 7-16 7 16 11-9-3 20Z" />
+                      <path d="M22 52h28" />
+                      <circle class="tl-badge-icon__fill" cx="18" cy="26" r="2" />
+                      <circle class="tl-badge-icon__fill" cx="36" cy="19" r="2" />
+                      <circle class="tl-badge-icon__fill" cx="54" cy="26" r="2" />
                     {{/if}}
                   </g>
                 </g>

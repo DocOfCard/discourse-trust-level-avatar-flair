@@ -1,15 +1,21 @@
-# Trust Level Avatar Flair - Mecha Shield v4
+# Trust Level Avatar Flair - Heraldic Armor
 
-This version replaces the CSS-only soft shield with a fully inline SVG badge:
+A Discourse theme component derived from tshenry's Trust Level Avatar Flair.
 
-- wide-shoulder angular armor
-- dark gasket and quality-color inner plate
-- metal bevels and rivets
-- redrawn monochrome SVG symbols, including proper crossed swords
-- smaller topic-avatar badge (17 x 19px)
-- keeps image URL, Font Awesome, position and exclusion compatibility
+## Version 5.0.0
 
-Recommended settings:
+- Rebuilt the badge as a static inline SVG with a wide-shouldered heraldic outline.
+- Four visual layers: outer armor, bright metal trim, dark gasket, and quality-colored inner panel.
+- Rebuilt crossed swords with blades, ridges, guards, grips, and pommels.
+- Reduced topic-post flair to approximately 15 x 17 px.
+- Keeps user-card/profile flair larger for readability.
+- Supports the original image URL and Font Awesome modes.
 
-- Badge Style: metal-shield
+## Installation
+
+Upload the ZIP as a theme component, attach it to the active theme, and keep:
+
+- Badge style: `metal-shield`
 - Use Font Awesome: disabled
+
+Disable older forks of the same component before testing, then hard-refresh the browser.
