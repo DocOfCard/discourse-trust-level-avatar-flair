@@ -1,7 +1,11 @@
-# Trust Level Avatar Flair - Simplified SVG Set v4.1.1
+# Trust Level Avatar Flair - Compact SVG Set v4.2.0
 
-Fixes:
-- TL0 only recolors the inner panel green; the metal frame remains silver/black.
-- Removes SVG viewBox padding.
-- Uses per-badge aspect-ratio widths and clears min-width constraints, removing left/right empty space.
-- No external badge shadow.
+Built from the site-provided `3.svg`.
+
+- Physically split into five independent SVG files
+- Tight horizontal and vertical crop with only a 1-unit safety margin
+- Source colors and internal artwork/shadows preserved
+- Redundant metadata and path precision optimized with SVGO
+- No intrinsic SVG width/height
+- CSS `min-width` and `min-height` constraints explicitly cleared
+- No component-level outer drop shadow

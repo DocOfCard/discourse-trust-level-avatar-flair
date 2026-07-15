@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none;
+  max-height: none;
   z-index: 1;
   background: transparent !important;
 }
@@ -15,7 +19,9 @@
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 100% 100%;
+  min-width: 0 !important;
+  min-height: 0 !important;
 }
 .tl-0 .tl-custom-svg-badge { background-image: url($badge_tl0); }
 .tl-1 .tl-custom-svg-badge { background-image: url($badge_tl1); }
@@ -59,16 +65,18 @@
   .collapsed-info .user-profile-avt .tl-flair { bottom: 9px; left: -5px; }
 }
 
-/* Match each SVG's actual aspect ratio instead of forcing a square container. */
-.user-card-avt .tl-0, .user-profile-avt .tl-0 { width: 27.3px; }
-.user-card-avt .tl-1, .user-profile-avt .tl-1 { width: 27.5px; }
-.user-card-avt .tl-2, .user-profile-avt .tl-2 { width: 27.4px; }
-.user-card-avt .tl-3, .user-profile-avt .tl-3 { width: 27.7px; }
-.user-card-avt .tl-4, .user-profile-avt .tl-4 { width: 30.8px; }
-.topic-avatar .tl-0, .collapsed-info .user-profile-avt .tl-0 { width: 12.2px; }
-.topic-avatar .tl-1, .collapsed-info .user-profile-avt .tl-1 { width: 12.3px; }
-.topic-avatar .tl-2, .collapsed-info .user-profile-avt .tl-2 { width: 12.2px; }
-.topic-avatar .tl-3, .collapsed-info .user-profile-avt .tl-3 { width: 12.4px; }
-.topic-avatar .tl-4, .collapsed-info .user-profile-avt .tl-4 { width: 13.8px; }
+
+
+/* Tight SVG aspect ratios; no fixed/minimum width. */
+.user-card-avt .tl-0, .user-profile-avt .tl-0 { width: 25.72px; min-width: 0 !important; }
+.user-card-avt .tl-1, .user-profile-avt .tl-1 { width: 25.78px; min-width: 0 !important; }
+.user-card-avt .tl-2, .user-profile-avt .tl-2 { width: 25.93px; min-width: 0 !important; }
+.user-card-avt .tl-3, .user-profile-avt .tl-3 { width: 25.66px; min-width: 0 !important; }
+.user-card-avt .tl-4, .user-profile-avt .tl-4 { width: 29.40px; min-width: 0 !important; }
+.topic-avatar .tl-0, .collapsed-info .user-profile-avt .tl-0 { width: 11.51px; min-width: 0 !important; }
+.topic-avatar .tl-1, .collapsed-info .user-profile-avt .tl-1 { width: 11.53px; min-width: 0 !important; }
+.topic-avatar .tl-2, .collapsed-info .user-profile-avt .tl-2 { width: 11.60px; min-width: 0 !important; }
+.topic-avatar .tl-3, .collapsed-info .user-profile-avt .tl-3 { width: 11.48px; min-width: 0 !important; }
+.topic-avatar .tl-4, .collapsed-info .user-profile-avt .tl-4 { width: 13.15px; min-width: 0 !important; }
 
 .user-main .collapsed-info.about { overflow: initial; }
