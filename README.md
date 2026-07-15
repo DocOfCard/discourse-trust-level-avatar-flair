@@ -1,21 +1,14 @@
-# Trust Level Avatar Flair - Heraldic Armor
+# Trust Level Avatar Flair - Heraldic Crest
 
-A Discourse theme component derived from tshenry's Trust Level Avatar Flair.
+Version 6.0.0.
 
-## Version 5.0.0
+This revision changes only the badge shell. The five internal trust-level symbols remain unchanged.
 
-- Rebuilt the badge as a static inline SVG with a wide-shouldered heraldic outline.
-- Four visual layers: outer armor, bright metal trim, dark gasket, and quality-colored inner panel.
-- Rebuilt crossed swords with blades, ridges, guards, grips, and pommels.
-- Reduced topic-post flair to approximately 15 x 17 px.
-- Keeps user-card/profile flair larger for readability.
-- Supports the original image URL and Font Awesome modes.
+- Continuous rounded heraldic silhouette instead of nested angular shields.
+- Broad curved shoulders, slightly bowed sides, gradual lower taper, and a long pointed base.
+- Four visual layers: dark rear shadow, metal shell, inset trim, and quality-colored panel.
+- Compact topic-post size remains approximately 15 x 17 px.
+- User-card and profile sizes remain larger for legibility.
+- Image URL, Emoji, and Font Awesome fallback modes remain supported.
 
-## Installation
-
-Upload the ZIP as a theme component, attach it to the active theme, and keep:
-
-- Badge style: `metal-shield`
-- Use Font Awesome: disabled
-
-Disable older forks of the same component before testing, then hard-refresh the browser.
+Disable older forks before installing this ZIP. Use `metal-shield` and keep Font Awesome disabled for the built-in SVG crest.

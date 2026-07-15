@@ -1,10 +1,10 @@
 {
-  "name": "Trust Level Avatar Flair - Heraldic Armor",
+  "name": "Trust Level Avatar Flair - Heraldic Crest",
   "component": true,
-  "authors": "OpenAI, based on the original component by tshenry",
-  "theme_version": "5.0.0",
+  "authors": "OpenAI; derived from Trust Level Avatar Flair by tshenry",
+  "theme_version": "6.0.0",
   "minimum_discourse_version": "3.3.0.beta1",
-  "about_url": "https://meta.discourse.org/t/trust-level-avatar-flair/82656",
+  "about_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair",
   "license_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair/blob/main/LICENSE",
-  "description": "Trust-level avatar flair with a layered heraldic armor badge, compact post sizing, and compatibility with image URLs, Emoji, and Font Awesome icons."
+  "description": "A Discourse theme component that adds compact trust-level avatar flair with a layered heraldic metal crest. Supports built-in SVG symbols, image URLs, Emoji, and Font Awesome icons."
 }

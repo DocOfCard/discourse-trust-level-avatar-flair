@@ -108,48 +108,50 @@ export default class TrustLevelAvatarFlair extends Component {
                 <g class="tl-mecha-badge__body">
                   <path
                     class="tl-mecha-badge__outer-shadow"
-                    d="M9 7 63 7 69 13 67 50 58 66 36 78 14 66 5 50 3 13Z"
+                    d="M7 10 Q36 -1 65 10 L63 48 Q60 62 52 69 L36 79 20 69 Q12 62 9 48Z"
                   />
                   <path
                     class="tl-mecha-badge__outer"
-                    d="M10 5 62 5 68 12 66 49 57 64 36 75 15 64 6 49 4 12Z"
+                    d="M8 8 Q36 -2 64 8 L62 47 Q59 59 51 66 L36 75 21 66 Q13 59 10 47Z"
                   />
                   <path
                     class="tl-mecha-badge__outer-highlight"
-                    d="M11 7 61 7 65 12 63 16 58 12 14 12 9 16 7 12Z"
+                    d="M11 10 Q36 1 61 10 L59 15 Q36 8 13 15Z"
                   />
                   <path
                     class="tl-mecha-badge__mid"
-                    d="M13 10 59 10 63 15 61 47 53 60 36 69 19 60 11 47 9 15Z"
+                    d="M12 12 Q36 4 60 12 L58 46 Q55 56 48 62 L36 70 24 62 Q17 56 14 46Z"
                   />
                   <path
                     class="tl-mecha-badge__gasket"
-                    d="M16 14 56 14 59 18 57 45 50 56 36 64 22 56 15 45 13 18Z"
+                    d="M15 15 Q36 8 57 15 L55 44 Q52 53 46 58 L36 65 26 58 Q20 53 17 44Z"
                   />
                   <path
                     class="tl-mecha-badge__panel"
-                    d="M18 17 54 17 56 20 54 43 48 53 36 60 24 53 18 43 16 20Z"
+                    d="M18 18 Q36 12 54 18 L52 42 Q50 49 44 54 L36 60 28 54 Q22 49 20 42Z"
                   />
                   <path
                     class="tl-mecha-badge__panel-highlight"
-                    d="M18 18 54 18 55 21 52 24 20 24 17 21Z"
+                    d="M19 19 Q36 14 53 19 L52 23 Q36 18 20 23Z"
                   />
                   <path
                     class="tl-mecha-badge__panel-left"
-                    d="M17 21 22 25 24 52 18 43Z"
+                    d="M19 22 24 25 27 51 22 46 20 42Z"
                   />
                   <path
                     class="tl-mecha-badge__panel-right"
-                    d="M55 21 50 25 48 52 54 43Z"
+                    d="M53 22 48 25 45 51 50 46 52 42Z"
                   />
                   <path
                     class="tl-mecha-badge__lower-shadow"
-                    d="M24 53 36 60 48 53 50 56 36 64 22 56Z"
+                    d="M28 54 36 60 44 54 46 58 36 65 26 58Z"
                   />
-                  <path class="tl-mecha-badge__edge-light" d="M10 12 13 15 15 45 22 57" />
-                  <path class="tl-mecha-badge__edge-dark" d="M62 12 59 15 57 45 50 57" />
-                  <circle class="tl-mecha-badge__rivet" cx="12.5" cy="17" r="1.35" />
-                  <circle class="tl-mecha-badge__rivet" cx="59.5" cy="17" r="1.35" />
+                  <path class="tl-mecha-badge__edge-light" d="M11 13 Q36 4 61 13" />
+                  <path class="tl-mecha-badge__edge-light" d="M13 16 15 45 Q18 56 25 62" />
+                  <path class="tl-mecha-badge__edge-dark" d="M59 16 57 45 Q54 56 47 62" />
+                  <path class="tl-mecha-badge__edge-dark" d="M25 66 36 73 47 66" />
+                  <circle class="tl-mecha-badge__rivet" cx="14.5" cy="17" r="1.25" />
+                  <circle class="tl-mecha-badge__rivet" cx="57.5" cy="17" r="1.25" />
 
                   <g class="tl-badge-icon">
                     {{#if this.isTl0}}
