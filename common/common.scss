@@ -147,3 +147,70 @@
     .user-profile-avt .tl-flair { left: 4px; }
   }
 }
+
+/* SVG shield rendering. No dynamic SVG ids or template helpers are required. */
+.tl-mecha-badge__body {
+  filter: drop-shadow(0 2px 1.5px rgb(0 0 0 / 72%));
+}
+
+.tl-mecha-badge__outer {
+  fill: #737980;
+  stroke: #15191e;
+  stroke-width: 2;
+}
+
+.tl-mecha-badge__gasket {
+  fill: #10151a;
+  stroke: #05080a;
+  stroke-width: 1.5;
+}
+
+.tl-mecha-badge__panel {
+  fill: var(--tl-accent);
+  stroke: rgb(255 255 255 / 42%);
+  stroke-width: 1.2;
+}
+
+.tl-mecha-badge__facet--light {
+  fill: rgb(255 255 255 / 18%);
+}
+
+.tl-mecha-badge__facet--dark {
+  fill: rgb(0 0 0 / 24%);
+}
+
+.tl-mecha-badge__facet--lower-dark {
+  fill: rgb(0 0 0 / 20%);
+}
+
+.tl-mecha-badge__facet--lower-light {
+  fill: rgb(255 255 255 / 8%);
+}
+
+.tl-mecha-badge__ridge {
+  fill: rgb(255 255 255 / 30%);
+}
+
+.tl-mecha-badge__rivet {
+  fill: #c7ccd0;
+  stroke: #2b3137;
+  stroke-width: 0.8;
+}
+
+.tl-badge-icon {
+  fill: none;
+  stroke: #f7f8f8;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 85%));
+}
+
+.tl-badge-icon__fill {
+  fill: #f7f8f8;
+  stroke: none;
+}
+
+.tl-badge-icon__soft-fill {
+  fill: rgb(255 255 255 / 15%);
+}
