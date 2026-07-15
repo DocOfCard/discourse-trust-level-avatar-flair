@@ -143,7 +143,7 @@ export default class TrustLevelAvatarFlair extends Component {
                   <circle class="tl-mecha-badge__rivet" cx="16" cy="50" r="1.5" />
                   <circle class="tl-mecha-badge__rivet" cx="48" cy="50" r="1.5" />
 
-                  <g class="tl-badge-icon">
+                  <g class="tl-badge-icon" transform="translate(-4 -1)">
                     {{#if this.isTl0}}
                       <path d="M36 51V31" />
                       <path d="M35 39C27 39 23 34 23 27c8 0 13 4 13 11" />

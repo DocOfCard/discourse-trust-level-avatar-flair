@@ -1,10 +1,11 @@
 {
-  "name": "Trust Level Avatar Flair - Mecha 3.1 / v6 Icons",
+  "name": "Trust Level Avatar Flair - Mecha Aligned",
   "component": true,
   "authors": "OpenAI; derived from Trust Level Avatar Flair by tshenry",
   "theme_version": "3.1.6",
   "minimum_discourse_version": "3.3.0.beta1",
   "about_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair",
   "license_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair/blob/main/LICENSE",
-  "description": "Uses the stable v3.1 mecha SVG badge shell with the refined v6 internal trust-level symbols. Supports built-in SVG symbols, image URLs, Emoji, and Font Awesome icons."
+  "description": "Trust-level avatar flair using the v3.1 mecha shield with v6 internal icons, aligned to the shield center.",
+  "version": "3.1.1"
 }
