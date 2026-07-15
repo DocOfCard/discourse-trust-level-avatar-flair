@@ -1,13 +1,13 @@
 {
-  "name": "Trust Level Avatar Flair - Compact SVG Set",
+  "name": "Trust Level Avatar Flair - Compact SVG Set (Safe)",
   "component": true,
   "authors": "OpenAI; based on Trust Level Avatar Flair by tshenry; badge artwork supplied by site owner",
-  "theme_version": "4.2.0",
+  "theme_version": "4.2.1",
   "minimum_discourse_version": "3.3.0.beta1",
   "about_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair",
   "license_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair/blob/main/LICENSE",
-  "description": "Five physically separated, tightly cropped, optimized SVG trust-level badges generated from the site-provided 3.svg. Preserves source colors and internal shadows; clears CSS min-size constraints and outer shadow.",
-  "version": "4.2.0",
+  "description": "Five separated and tightly cropped SVG badges. Safe optimization keeps the SVG namespace and standalone rendering compatibility, clears CSS min-size constraints, and adds no outer shadow.",
+  "version": "4.2.1",
   "assets": {
     "badge_tl0": "assets/badge-tl0.svg",
     "badge_tl1": "assets/badge-tl1.svg",
