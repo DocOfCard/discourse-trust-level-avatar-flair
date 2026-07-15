@@ -2,10 +2,10 @@
   "name": "Trust Level Avatar Flair - Mecha Progression",
   "component": true,
   "authors": "OpenAI; derived from Trust Level Avatar Flair by tshenry",
-  "theme_version": "3.1.7",
+  "theme_version": "3.1.8",
   "minimum_discourse_version": "3.3.0.beta1",
   "about_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair",
   "license_url": "https://github.com/tshenry/discourse-trust-level-avatar-flair/blob/main/LICENSE",
-  "description": "Trust-level avatar flair using the v3.1 mecha shield with a unified progression icon set: sprout, sword, crossed swords, battle flag, and crown.",
-  "version": "3.1.2"
+  "description": "Trust-level avatar flair using the v3.1 mecha shield with a unified progression icon set and an inline TL0-TL4 preview in the admin settings.",
+  "version": "3.1.3"
 }
