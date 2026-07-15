@@ -43,35 +43,44 @@
 }
 
 .tl-flair:has(.tl-flair-emoji) {
-  background: transparent !important;
   background-image: none !important;
-  box-shadow: none !important;
-  overflow: visible;
+  border: 2px solid rgb(255 255 255 / 92%);
+  box-shadow:
+    0 1px 3px rgb(0 0 0 / 45%),
+    inset 0 0 0 1px rgb(0 0 0 / 18%);
+  overflow: hidden;
 }
+
+.tl-flair.tl-0:has(.tl-flair-emoji) { background: #6b7280 !important; }
+.tl-flair.tl-1:has(.tl-flair-emoji) { background: #22c55e !important; }
+.tl-flair.tl-2:has(.tl-flair-emoji) { background: #3b82f6 !important; }
+.tl-flair.tl-3:has(.tl-flair-emoji) { background: #9333ea !important; }
+.tl-flair.tl-4:has(.tl-flair-emoji) { background: #f59e0b !important; }
 
 .tl-flair-emoji {
   display: block;
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
   line-height: 1;
-  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 55%));
+  transform: translateY(-0.02em);
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 35%));
   user-select: none;
 }
 
 .user-card-avt .tl-flair,
 .user-profile-avt .tl-flair {
   background-size: contain;
-  width: 40px;
-  height: 40px;
-  font-size: 1.75em;
+  width: 32px;
+  height: 32px;
+  font-size: 1.15em;
   .d-icon { height: 0.95em; }
 }
 
 .topic-avatar .tl-flair,
 .collapsed-info .user-profile-avt .tl-flair {
   background-size: contain;
-  width: 24px;
-  height: 24px;
-  font-size: 1.05em;
+  width: 20px;
+  height: 20px;
+  font-size: 0.78em;
   .d-icon { height: 0.95em; }
 }
 

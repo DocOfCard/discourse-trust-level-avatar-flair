@@ -1,17 +1,12 @@
-# Trust Level Avatar Flair - Emoji Fixed
+# Trust Level Avatar Flair - WoW Badge Edition
 
-A compatibility-fixed build of `tshenry/discourse-trust-level-avatar-flair`.
+在原组件基础上增加 Emoji 渲染，并使用更紧凑的魔兽装备品质徽章样式。
 
-## Fix
+默认：
+- TL0 🌱 灰色
+- TL1 ⚔️ 绿色
+- TL2 🏅 蓝色
+- TL3 💎 紫色
+- TL4 👑 橙色
 
-The upstream component only rendered values containing `fa-`; plain Emoji values produced an empty flair element and only the background circle was visible. This build renders plain Emoji directly while retaining image URL and Font Awesome support.
-
-## Defaults
-
-- TL0: 🌱
-- TL1: ⚔️
-- TL2: 🏅
-- TL3: 💎
-- TL4: 👑
-
-For Emoji, keep **Use Font Awesome** disabled.
+安装后关闭 Use Font Awesome。
